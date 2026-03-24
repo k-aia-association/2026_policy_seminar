@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>초기투자 정책 세미나 | 초기투자액셀러레이터협회</title>
+  <meta name="description" content="STO 제도권 안착에 따른 초기 투자자의 역할과 회수 전략 — 초기투자액셀러레이터협회 주최 정책 세미나 제1회 (2026년 4월)" />
+  <meta property="og:title" content="초기투자 정책 세미나 제1회 | 초기투자액셀러레이터협회" />
+  <meta property="og:description" content="STO 제도권 안착에 따른 초기 투자자의 역할과 회수 전략. 이용관 블루포인트파트너스 대표, 김서준 해시드 대표 발제." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
+
+  <!-- Pretendard Font -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: { DEFAULT: '#28ADAD', dark: '#1d8f8f', light: '#4dc4c4' },
+            navy: { DEFAULT: '#182B52', dark: '#0f1c35', light: '#243e73' },
+          },
+          fontFamily: {
+            sans: ['Pretendard', 'Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      --teal: #28ADAD;
+      --navy: #182B52;
+      --bg: #0a0a0a;
+      --bg2: #111111;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --text-secondary: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Pretendard', 'Inter', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #111; }
+    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
+
+    /* ── Navbar ── */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
+      padding: 1rem 0;
+    }
+    #navbar.scrolled {
+      background: rgba(10, 10, 10, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(40, 173, 173, 0.15);
+    }
+
+    /* ── Hero Aurora ── */
+    @keyframes auroraShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes auroraBlob1 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.55; }
+      33%       { transform: translate(60px, -40px) scale(1.15); opacity: 0.7; }
+      66%       { transform: translate(-30px, 50px) scale(0.9); opacity: 0.45; }
+    }
+    @keyframes auroraBlob2 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.45; }
+      33%       { transform: translate(-70px, 50px) scale(0.85); opacity: 0.6; }
+      66%       { transform: translate(40px, -60px) scale(1.2); opacity: 0.35; }
+    }
+    @keyframes auroraBlob3 {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+      50%       { transform: translate(30px, 30px) scale(1.1); opacity: 0.5; }
+    }
+    @keyframes floatParticle {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.4; }
+      50%       { transform: translateY(-30px) translateX(15px); opacity: 0.8; }
+    }
+    @keyframes pulse-ring {
+      0%   { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(40,173,173,0.5); }
+      70%  { transform: scale(1); box-shadow: 0 0 0 14px rgba(40,173,173,0); }
+      100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(40,173,173,0); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #090d14;
+    }
+    .aurora-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #090d14 0%, #182B52 40%, #0d2240 60%, #090d14 100%);
+      background-size: 300% 300%;
+      animation: auroraShift 12s ease infinite;
+    }
+    .aurora-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .blob-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(40,173,173,0.35) 0%, transparent 70%);
+      top: -100px; left: -150px;
+      animation: auroraBlob1 14s ease-in-out infinite;
+    }
+    .blob-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(24,43,82,0.8) 0%, rgba(40,173,173,0.2) 50%, transparent 70%);
+      bottom: -80px; right: -100px;
+      animation: auroraBlob2 18s ease-in-out infinite;
+    }
+    .blob-3 {
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(40,173,173,0.2) 0%, transparent 70%);
+      top: 40%; left: 55%;
+      animation: auroraBlob3 10s ease-in-out infinite;
+    }
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      width: 3px; height: 3px;
+      background: var(--teal);
+      border-radius: 50%;
+    }
+    .particle:nth-child(1)  { top: 15%; left: 10%; animation: floatParticle 6s ease-in-out infinite; }
+    .particle:nth-child(2)  { top: 25%; left: 80%; animation: floatParticle 8s ease-in-out infinite 1s; }
+    .particle:nth-child(3)  { top: 60%; left: 20%; animation: floatParticle 7s ease-in-out infinite 2s; }
+    .particle:nth-child(4)  { top: 70%; left: 70%; animation: floatParticle 5s ease-in-out infinite 0.5s; }
+    .particle:nth-child(5)  { top: 40%; left: 40%; animation: floatParticle 9s ease-in-out infinite 1.5s; }
+    .particle:nth-child(6)  { top: 80%; left: 50%; animation: floatParticle 6s ease-in-out infinite 3s; }
+    .particle:nth-child(7)  { top: 10%; left: 60%; animation: floatParticle 7s ease-in-out infinite 2.5s; }
+    .particle:nth-child(8)  { top: 50%; left: 90%; animation: floatParticle 8s ease-in-out infinite 4s; }
+
+    /* ── Glassmorphism Card ── */
+    .glass-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .glass-card:hover {
+      border-color: rgba(40,173,173,0.4);
+      box-shadow: 0 8px 32px rgba(40,173,173,0.12);
+    }
+
+    /* ── Speaker Card ── */
+    .speaker-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s, border-color 0.35s;
+    }
+    .speaker-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(40,173,173,0.2), 0 0 0 1px rgba(40,173,173,0.5);
+      border-color: rgba(40,173,173,0.6);
+    }
+    .speaker-avatar {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .speaker-avatar::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #28ADAD, #182B52);
+      z-index: -1;
+    }
+
+    /* ── Timeline ── */
+    .timeline-item {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 20px;
+      bottom: -20px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--teal), transparent);
+    }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--teal);
+      border: 3px solid var(--bg2);
+      box-shadow: 0 0 12px rgba(40,173,173,0.5);
+    }
+
+    /* ── Accordion ── */
+    .accordion-item {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .accordion-item.open {
+      border-color: rgba(40,173,173,0.4);
+    }
+    .accordion-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.03);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: background 0.2s;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+    }
+    .accordion-btn:hover { background: rgba(40,173,173,0.08); }
+    .accordion-icon {
+      width: 24px; height: 24px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(40,173,173,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s, background 0.3s;
+      color: var(--teal);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .accordion-item.open .accordion-icon {
+      transform: rotate(45deg);
+      background: rgba(40,173,173,0.3);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s;
+      padding: 0 1.5rem;
+    }
+    .accordion-content.open {
+      max-height: 200px;
+      padding: 1rem 1.5rem 1.25rem;
+    }
+
+    /* ── Series Cards ── */
+    .series-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .series-card.active {
+      border-color: rgba(40,173,173,0.6);
+      box-shadow: 0 0 30px rgba(40,173,173,0.15);
+    }
+    .series-card:hover:not(.active) {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .coming-soon-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,10,10,0.65);
+      backdrop-filter: blur(2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+    }
+
+    /* ── CTA Button ── */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #28ADAD 0%, #1d8f8f 100%);
+      color: white;
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      animation: pulse-ring 2.5s cubic-bezier(0.66, 0, 0, 1) infinite;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: inherit;
+    }
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 40px rgba(40,173,173,0.5);
+      animation: none;
+    }
+    .cta-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--teal);
+      font-weight: 600;
+      padding: 0.875rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 1.5px solid var(--teal);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      font-family: inherit;
+    }
+    .cta-btn-outline:hover {
+      background: var(--teal);
+      color: white;
+      transform: scale(1.03);
+    }
+
+    /* ── Badge ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .badge-teal {
+      background: rgba(40,173,173,0.15);
+      color: var(--teal);
+      border: 1px solid rgba(40,173,173,0.35);
+    }
+    .badge-navy {
+      background: rgba(24,43,82,0.6);
+      color: #93c5fd;
+      border: 1px solid rgba(24,43,82,0.8);
+    }
+    .badge-active {
+      background: rgba(40,173,173,0.2);
+      color: #5ee3e3;
+      border: 1px solid rgba(40,173,173,0.5);
+      animation: pulse-ring 3s ease-in-out infinite;
+    }
+
+    /* ── Section ── */
+    .section { padding: 6rem 0; }
+    .section-alt { background: #0d1117; }
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .teal-text { color: var(--teal); }
+    .gradient-text {
+      background: linear-gradient(135deg, #28ADAD 0%, #7dd3d3 50%, #28ADAD 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+
+    /* ── Divider ── */
+    .teal-divider {
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, var(--teal), transparent);
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Mobile menu ── */
+    #mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    #mobile-menu.open { display: flex; }
+
+    /* ── Icon circles (about) ── */
+    .icon-circle {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: rgba(40,173,173,0.12);
+      border: 1px solid rgba(40,173,173,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Responsive tweaks ── */
+    @media (max-width: 640px) {
+      .section { padding: 4rem 0; }
+      .cta-btn { padding: 0.875rem 1.75rem; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════ -->
+<nav id="navbar" aria-label="메인 내비게이션">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#hero" class="flex flex-col leading-tight">
+      <span class="text-xs font-medium tracking-widest uppercase" style="color:var(--teal);">Korea Accelerator Association</span>
+      <span class="text-base font-bold text-white">초기투자액셀러레이터협회</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-7 text-sm font-medium" style="color:var(--text-muted);">
+      <a href="#about"    class="hover:text-white transition-colors">세미나 소개</a>
+      <a href="#speakers" class="hover:text-white transition-colors">연사</a>
+      <a href="#program"  class="hover:text-white transition-colors">프로그램</a>
+      <a href="#panel"    class="hover:text-white transition-colors">패널 토론</a>
+      <a href="#series"   class="hover:text-white transition-colors">시리즈</a>
+      <a href="#register" class="cta-btn-outline text-xs px-5 py-2.5" style="animation:none;">사전 신청</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="hamburger-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="메뉴 열기" aria-expanded="false">
+      <span class="block w-6 h-0.5 bg-white transition-all" id="ham-1"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all" id="ham-2"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all" id="ham-3"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="모바일 메뉴">
+  <a href="#about"    class="text-2xl font-semibold text-white hover:text-teal-DEFAULT transition-colors" onclick="closeMobileMenu()">세미나 소개</a>
+  <a href="#speakers" class="text-2xl font-semibold text-white hover:text-teal-DEFAULT transition-colors" onclick="closeMobileMenu()">연사</a>
+  <a href="#program"  class="text-2xl font-semibold text-white hover:text-teal-DEFAULT transition-colors" onclick="closeMobileMenu()">프로그램</a>
+  <a href="#panel"    class="text-2xl font-semibold text-white hover:text-teal-DEFAULT transition-colors" onclick="closeMobileMenu()">패널 토론</a>
+  <a href="#series"   class="text-2xl font-semibold text-white hover:text-teal-DEFAULT transition-colors" onclick="closeMobileMenu()">시리즈</a>
+  <a href="#register" class="cta-btn mt-4" onclick="closeMobileMenu()">사전 신청하기</a>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section id="hero" aria-label="히어로 섹션">
+  <div class="aurora-bg"></div>
+  <div class="aurora-blob blob-1"></div>
+  <div class="aurora-blob blob-2"></div>
+  <div class="aurora-blob blob-3"></div>
+  <div class="hero-particles" aria-hidden="true">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 py-32 md:py-40">
+    <div class="max-w-3xl">
+      <!-- Badges -->
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="badge badge-active">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-teal-300 mr-1.5" style="background:#5ee3e3;"></span>
+          제1회
+        </span>
+        <span class="badge badge-teal">50석 한정</span>
+        <span class="badge badge-navy">2026년 4월</span>
+      </div>
+
+      <!-- Label -->
+      <p class="text-sm font-semibold tracking-widest uppercase mb-3" style="color:var(--teal);">
+        초기투자액셀러레이터협회 주최
+      </p>
+
+      <!-- Title -->
+      <h1 class="section-title text-white mb-4" style="font-size: clamp(2rem, 5.5vw, 3.5rem);">
+        초기투자<br />
+        <span class="gradient-text">정책 세미나</span>
+      </h1>
+
+      <!-- Topic -->
+      <p class="text-lg md:text-xl font-medium mb-2" style="color:var(--text-secondary); line-height:1.6;">
+        STO 제도권 안착에 따른<br />
+        초기 투자자의 역할과 회수 전략
+      </p>
+
+      <!-- Meta info -->
+      <div class="flex flex-wrap gap-4 mt-6 mb-8 text-sm" style="color:var(--text-muted);">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 flex-shrink-0" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          2026년 4월 (날짜 추후 확정)
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 flex-shrink-0" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          16:00 ~ 17:20 (80분)
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 flex-shrink-0" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          서울창업허브 엠플러스 1층 라운지 (마곡)
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 flex-shrink-0" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          정원 50명
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex flex-wrap gap-3">
+        <a href="#" class="cta-btn">
+          신청하기
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+        <a href="#about" class="cta-btn-outline">
+          세미나 소개 보기
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1" aria-hidden="true">
+    <span class="text-xs tracking-widest uppercase" style="color:var(--text-muted);">Scroll</span>
+    <svg class="w-4 h-4 animate-bounce" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════════ -->
+<section id="about" class="section" aria-labelledby="about-title">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14" data-aos="fade-up">
+      <p class="text-sm font-semibold tracking-widest uppercase mb-2" style="color:var(--teal);">About</p>
+      <h2 id="about-title" class="section-title text-white">세미나 소개</h2>
+      <div class="teal-divider mx-auto mt-4"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <p class="text-lg leading-relaxed mb-5" style="color:var(--text-secondary);">
+          <span class="font-bold text-white">초기투자액셀러레이터협회</span>는 AC·VC·CVC 종사자, 창업 유관기관, 정책기관, 스타트업 생태계를 연결하는 <span class="teal-text font-semibold">정책 세미나 시리즈</span>를 2026년 3회에 걸쳐 개최합니다.
+        </p>
+        <p class="text-base leading-relaxed mb-5" style="color:var(--text-muted);">
+          제1회 세미나는 <strong class="text-white">STO(증권형 토큰) 제도권 안착</strong> 이후 초기투자 업계가 마주하게 될 기회와 과제를 심층 논의합니다. 실무 경험을 갖춘 최정상급 연사의 발제와, 현장 전문가들이 참여하는 패널 토론이 함께 진행됩니다.
+        </p>
+        <p class="text-base leading-relaxed" style="color:var(--text-muted);">
+          정원은 <strong class="text-white">50명</strong>으로 소규모 밀도 높은 논의를 지향합니다.
+          AC·VC·CVC 종사자, 정책기관, 창업 유관기관 담당자 및 스타트업 종사자를 위한 자리입니다.
+        </p>
+      </div>
+
+      <div class="grid gap-4" data-aos="fade-left">
+        <!-- Card 1 -->
+        <div class="glass-card p-6 flex items-start gap-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon-circle" aria-hidden="true">
+            <svg class="w-6 h-6" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base mb-1">정책 동향</h3>
+            <p class="text-sm" style="color:var(--text-muted);">STO 제도화 현황과 글로벌 규제 흐름을 짚어보고, 한국 초기투자 생태계에 미치는 영향을 분석합니다.</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="glass-card p-6 flex items-start gap-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-circle" aria-hidden="true">
+            <svg class="w-6 h-6" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base mb-1">투자 전략</h3>
+            <p class="text-sm" style="color:var(--text-muted);">토큰 기반 투자·회수의 실무 경험을 공유하고, 초기투자자의 실질적인 대응 전략을 도출합니다.</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="glass-card p-6 flex items-start gap-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="icon-circle" aria-hidden="true">
+            <svg class="w-6 h-6" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base mb-1">네트워킹</h3>
+            <p class="text-sm" style="color:var(--text-muted);">AC·VC·CVC·정책기관·스타트업 종사자 50인이 한 자리에 모여 긴밀한 산업 네트워크를 형성합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     SPEAKERS
+════════════════════════════════════════════ -->
+<section id="speakers" class="section section-alt" aria-labelledby="speakers-title">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14" data-aos="fade-up">
+      <p class="text-sm font-semibold tracking-widest uppercase mb-2" style="color:var(--teal);">Speakers</p>
+      <h2 id="speakers-title" class="section-title text-white">연사 소개</h2>
+      <div class="teal-divider mx-auto mt-4"></div>
+    </div>
+
+    <!-- 1회차 라벨 -->
+    <div class="flex items-center gap-3 mb-8" data-aos="fade-up" data-aos-delay="50">
+      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold border" style="background: rgba(40,173,173,0.1); border-color: #28ADAD; color: #28ADAD;">
+        <span class="w-2 h-2 rounded-full bg-teal inline-block animate-pulse"></span>
+        1회차 연사
+      </span>
+      <span class="text-sm" style="color:var(--text-muted);">STO 제도권 안착에 따른 초기 투자자의 역할과 회수 전략</span>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Speaker 1: 이용관 -->
+      <article class="speaker-card" data-aos="fade-right" data-aos-delay="100">
+        <div class="p-8">
+          <div class="flex items-start gap-5 mb-6">
+            <!-- Avatar: 이 -->
+            <div class="speaker-avatar" style="background: url('images/speaker-01.png') center/cover no-repeat;" aria-label="이용관 발표자 사진">
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="badge badge-teal">발제 1</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white">이용관</h3>
+              <p class="font-medium mt-0.5" style="color:var(--teal);">블루포인트파트너스 대표</p>
+              <p class="text-xs mt-1" style="color:var(--text-muted);">KAIST 물리학 박사</p>
+            </div>
+          </div>
+
+          <div class="space-y-3 mb-6">
+            <div class="flex items-start gap-2.5 text-sm" style="color:var(--text-secondary);">
+              <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              2000년 반도체 장비 '플라즈마트' 창업, 미국 나스닥 상장사에 매각
+            </div>
+            <div class="flex items-start gap-2.5 text-sm" style="color:var(--text-secondary);">
+              <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              블루포인트파트너스 설립 (2014), 투자기업 262개, 포트폴리오 392개
+            </div>
+            <div class="flex items-start gap-2.5 text-sm" style="color:var(--text-secondary);">
+              <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              투자기업 5년 생존율 약 90% — 국내 평균의 약 3배
+            </div>
+            <div class="flex items-start gap-2.5 text-sm" style="color:var(--text-secondary);">
+              <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              국내 AC 1호 상장 추진 중 · 딥테크 전문 (AI·클린에너지·양자컴퓨팅)
+            </div>
+          </div>
+
+          <!-- Talk topic -->
+          <div class="rounded-xl p-4" style="background: rgba(40,173,173,0.08); border: 1px solid rgba(40,173,173,0.2);">
+            <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color:var(--teal);">발제 주제</p>
+            <p class="text-sm font-medium text-white">초기투자 관점에서 본 STO 활용과 회수 전략</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Speaker 2: 김서준 -->
+      <article class="speaker-card" data-aos="fade-left" data-aos-delay="200">
+        <div class="p-8">
+          <div class="flex items-start gap-5 mb-6">
+            <!-- Avatar: 김 -->
+            <div class="speaker-avatar" style="background: url('images/speaker-02.png') center/cover no-repeat;" aria-label="김서준 발표자 사진">
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="badge badge-teal">발제 2</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white">김서준</h3>
+              <p class="font-medium mt-0.5" style="color:var(--teal);">해시드 대표</p>
+              <p class="text-xs mt-1" style="color:var(--text-muted);">POSTECH 출신</p>
+            </div>
+          </div>
+
+          <div class="space-y-3 mb-6">
+            <div class="flex items-start gap-2.5 text-sm" style="color:var(--text-secondary);">
+              <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              에듀테크 '노리' 대교 매각, 데이팅 앱 '아만다'(넥스트매치) 5,000억원대 엑싯
+            </div>
+            <div class="flex items-start gap-2.5 text-sm" style="color:var(--text-secondary);">
+              <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              해시드 설립 (2017) — 아시아 최고 블록체인 VC, 운용자산 3,600억원
+            </div>
+            <div class="flex items-start gap-2.5 text-sm" style="color:var(--text-secondary);">
+              <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              이더리움 ICO, Axie Infinity, Sandbox, dYdX, Worldcoin 등 주요 투자
+            </div>
+            <div class="flex items-start gap-2.5 text-sm" style="color:var(--text-secondary);">
+              <svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              서울·샌프란시스코·싱가포르·벵갈루루·아부다비 글로벌 오피스 운영
+            </div>
+          </div>
+
+          <!-- Talk topic -->
+          <div class="rounded-xl p-4" style="background: rgba(40,173,173,0.08); border: 1px solid rgba(40,173,173,0.2);">
+            <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color:var(--teal);">발제 주제</p>
+            <p class="text-sm font-medium text-white">토큰 기반 투자·회수 경험과 한국 STO에의 시사점</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     PROGRAM TIMELINE
+════════════════════════════════════════════ -->
+<section id="program" class="section" aria-labelledby="program-title">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14" data-aos="fade-up">
+      <p class="text-sm font-semibold tracking-widest uppercase mb-2" style="color:var(--teal);">Program</p>
+      <h2 id="program-title" class="section-title text-white">세미나 프로그램</h2>
+      <div class="teal-divider mx-auto mt-4"></div>
+      <p class="mt-4 text-base" style="color:var(--text-muted);">2026년 4월 · 16:00 ~ 17:20 (총 80분)</p>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-8">
+
+      <!-- Item 1 -->
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="glass-card p-6 ml-2">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">16:00 ~ 16:10</span>
+              <h3 class="text-lg font-bold text-white mt-1">개회사 및 세미나 소개</h3>
+            </div>
+            <span class="badge badge-navy flex-shrink-0">협회</span>
+          </div>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">10분 — 초기투자액셀러레이터협회 인사말 및 2026 정책 세미나 시리즈 소개</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="glass-card p-6 ml-2">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">16:10 ~ 16:30</span>
+              <h3 class="text-lg font-bold text-white mt-1">[발제 1] 초기투자 관점에서 본 STO 활용과 회수 전략</h3>
+            </div>
+            <span class="badge badge-teal flex-shrink-0">이용관 대표</span>
+          </div>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 — 블루포인트파트너스 대표 · 딥테크 초기투자 경험 기반 STO 회수 전략 제언</p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="glass-card p-6 ml-2">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">16:30 ~ 16:50</span>
+              <h3 class="text-lg font-bold text-white mt-1">[발제 2] 토큰 기반 투자·회수 경험과 한국 STO에의 시사점</h3>
+            </div>
+            <span class="badge badge-teal flex-shrink-0">김서준 대표</span>
+          </div>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 — 해시드 대표 · 블록체인 크립토 투자 실전 경험과 제도권 STO 전환 시사점</p>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="glass-card p-6 ml-2" style="border-color: rgba(40,173,173,0.3); background: rgba(40,173,173,0.06);">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">16:50 ~ 17:20</span>
+              <h3 class="text-lg font-bold text-white mt-1">[패널 토론] STO 시대, 초기투자의 기회와 과제</h3>
+            </div>
+            <span class="badge badge-active flex-shrink-0">발제자 + 패널</span>
+          </div>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">30분 — 발제자 + 현장 전문가 패널이 함께하는 심층 토론</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     PANEL DISCUSSION TOPICS
+════════════════════════════════════════════ -->
+<section id="panel" class="section section-alt" aria-labelledby="panel-title">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14" data-aos="fade-up">
+      <p class="text-sm font-semibold tracking-widest uppercase mb-2" style="color:var(--teal);">Panel Discussion</p>
+      <h2 id="panel-title" class="section-title text-white">패널 토론 주제</h2>
+      <div class="teal-divider mx-auto mt-4"></div>
+      <p class="mt-4 text-base" style="color:var(--text-muted);">STO 시대, 초기투자의 기회와 과제 — 5가지 핵심 의제</p>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-3" id="accordion">
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+        <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+          <span class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(40,173,173,0.3);">1</span>
+            <span class="font-semibold text-left text-base">STO가 초기투자의 '유동성 함정'을 해결할 수 있는가</span>
+          </span>
+          <span class="accordion-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="text-sm" style="color:var(--text-muted);">비상장 초기기업 투자 후 회수 수단이 제한적인 현실에서, 토큰증권이 새로운 유동성 출구로 기능할 수 있는지 논의합니다. 제도화된 STO의 회수 가능성과 현실적 제약을 함께 검토합니다.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="150">
+        <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+          <span class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(40,173,173,0.3);">2</span>
+            <span class="font-semibold text-left text-base">비상장 스타트업의 토큰증권 발행, 시기상조인가 적기인가</span>
+          </span>
+          <span class="accordion-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="text-sm" style="color:var(--text-muted);">스타트업 입장에서의 STO 발행 타이밍, 투자자 보호 장치, 기존 주주와의 관계 정립 문제 등을 실무적 시각에서 분석합니다.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+        <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+          <span class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(40,173,173,0.3);">3</span>
+            <span class="font-semibold text-left text-base">제도권 STO와 크립토 네이티브 토큰, 공존할 수 있는가</span>
+          </span>
+          <span class="accordion-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="text-sm" style="color:var(--text-muted);">규제 틀 안의 증권형 토큰과 탈중앙화 크립토 생태계가 어떻게 상호보완적으로 발전할 수 있는지, 국내외 사례를 바탕으로 검토합니다.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="250">
+        <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+          <span class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(40,173,173,0.3);">4</span>
+            <span class="font-semibold text-left text-base">글로벌 경쟁 속 한국 STO 제도의 경쟁력은</span>
+          </span>
+          <span class="accordion-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="text-sm" style="color:var(--text-muted);">미국·유럽·싱가포르 등 주요국 STO 제도와 비교하여 한국의 현황을 점검하고, 글로벌 자본 유치를 위한 제도 개선 방향을 제언합니다.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+        <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+          <span class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(40,173,173,0.3);">5</span>
+            <span class="font-semibold text-left text-base">초기투자업계가 지금 당장 준비해야 할 3가지는</span>
+          </span>
+          <span class="accordion-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="text-sm" style="color:var(--text-muted);">STO 시대를 앞두고 AC·VC·CVC가 내부적으로 갖춰야 할 역량, 포트폴리오 전략 변화, 그리고 정책 참여 방향에 대한 실천적 제언을 도출합니다.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     SERIES
+════════════════════════════════════════════ -->
+<section id="series" class="section" aria-labelledby="series-title">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14" data-aos="fade-up">
+      <p class="text-sm font-semibold tracking-widest uppercase mb-2" style="color:var(--teal);">2026 Series</p>
+      <h2 id="series-title" class="section-title text-white">세미나 시리즈</h2>
+      <div class="teal-divider mx-auto mt-4"></div>
+      <p class="mt-4 text-base" style="color:var(--text-muted);">2026년 총 3회에 걸쳐 초기투자 정책 현안을 집중 논의합니다</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Session 1 (Active) -->
+      <div class="series-card active" data-aos="zoom-in" data-aos-delay="100">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-4">
+            <span class="badge badge-active">1차 · 4월</span>
+            <span class="text-xs font-semibold uppercase tracking-wider" style="color:var(--teal);">현재 회차</span>
+          </div>
+          <h3 class="text-base font-bold text-white leading-snug mb-3">STO 제도권 안착에 따른 초기 투자자의 역할과 회수 전략</h3>
+          <p class="text-sm" style="color:var(--text-muted);">이용관 (블루포인트파트너스), 김서준 (해시드) 발제 · 패널 토론</p>
+          <div class="mt-5">
+            <a href="#" class="cta-btn-outline text-xs px-4 py-2.5">신청하기</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Session 2 (Coming Soon) -->
+      <div class="series-card relative" data-aos="zoom-in" data-aos-delay="200">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-4">
+            <span class="badge badge-navy">2차 · 7월</span>
+          </div>
+          <h3 class="text-base font-bold text-white leading-snug mb-3">AI 스타트업의 저작권·데이터 규제와 민간 투자 활성화 방안</h3>
+          <p class="text-sm" style="color:var(--text-muted);">연사 및 상세 내용 추후 공개</p>
+        </div>
+        <div class="coming-soon-overlay">
+          <span class="badge badge-navy text-sm py-2 px-5 font-semibold">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- Session 3 (Coming Soon) -->
+      <div class="series-card relative" data-aos="zoom-in" data-aos-delay="300">
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-4">
+            <span class="badge badge-navy">3차 · 10월</span>
+          </div>
+          <h3 class="text-base font-bold text-white leading-snug mb-3">벤처스튜디오/딥테크 스케일업을 위한 세컨더리 및 구주 회수 활성화</h3>
+          <p class="text-sm" style="color:var(--text-muted);">연사 및 상세 내용 추후 공개</p>
+        </div>
+        <div class="coming-soon-overlay">
+          <span class="badge badge-navy text-sm py-2 px-5 font-semibold">Coming Soon</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     CTA / REGISTER
+════════════════════════════════════════════ -->
+<section id="register" aria-labelledby="register-title" style="background: linear-gradient(135deg, #0d1929 0%, #182B52 40%, #0a2020 70%, #0a0a0a 100%); position: relative; overflow: hidden;">
+  <!-- Decorative blob -->
+  <div style="position:absolute; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(40,173,173,0.12) 0%, transparent 70%); top:-200px; right:-200px; pointer-events:none;"></div>
+  <div style="position:absolute; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle, rgba(40,173,173,0.08) 0%, transparent 70%); bottom:-100px; left:-100px; pointer-events:none;"></div>
+
+  <div class="section relative z-10">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+      <div data-aos="fade-up">
+        <p class="text-sm font-semibold tracking-widest uppercase mb-2" style="color:var(--teal);">Registration</p>
+        <h2 id="register-title" class="section-title text-white mb-4">지금 바로 사전 신청하세요</h2>
+        <div class="teal-divider mx-auto mt-4 mb-6"></div>
+        <p class="text-lg mb-3" style="color:var(--text-secondary);">정원 <strong class="text-white">50명</strong> 한정 · 선착순 마감</p>
+        <p class="text-base mb-10" style="color:var(--text-muted);">2026년 4월, 서울창업허브 엠플러스 1층 라운지(마곡)에서 뵙겠습니다.</p>
+      </div>
+
+      <!-- Target audience tags -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10" data-aos="fade-up" data-aos-delay="100">
+        <span class="badge badge-teal py-2 px-4 text-sm">AC · VC · CVC 종사자</span>
+        <span class="badge badge-teal py-2 px-4 text-sm">창업 유관기관</span>
+        <span class="badge badge-teal py-2 px-4 text-sm">정책기관 담당자</span>
+        <span class="badge badge-teal py-2 px-4 text-sm">스타트업 종사자</span>
+      </div>
+
+      <!-- CTA Button -->
+      <div data-aos="zoom-in" data-aos-delay="150">
+        <a href="#" class="cta-btn text-lg py-5 px-10 inline-flex">
+          신청 바로가기
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+      <p class="text-xs mt-6" style="color:var(--text-muted);">* 신청 완료 후 확인 안내 메일이 발송됩니다. 장소 및 참가 안내는 추후 별도 공지됩니다.</p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer style="background:#060a10; border-top: 1px solid rgba(255,255,255,0.06);" role="contentinfo">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+
+      <!-- Brand -->
+      <div>
+        <p class="text-xs font-semibold tracking-widest uppercase mb-1" style="color:var(--teal);">Korea Accelerator Association</p>
+        <p class="text-lg font-bold text-white mb-3">초기투자액셀러레이터협회</p>
+        <p class="text-sm leading-relaxed" style="color:var(--text-muted);">초기투자 생태계의 지속가능한 성장을 위해<br />정책 연구·교육·네트워킹을 선도합니다.</p>
+      </div>
+
+      <!-- Event info -->
+      <div>
+        <h3 class="text-sm font-bold text-white mb-3">제1회 초기투자 정책 세미나</h3>
+        <ul class="space-y-1.5 text-sm" style="color:var(--text-muted);">
+          <li>일시: 2026년 4월 (날짜 추후 확정)</li>
+          <li>시간: 16:00 ~ 17:20</li>
+          <li>장소: 서울창업허브 엠플러스 1층 라운지 (마곡)</li>
+          <li>정원: 50명 (선착순)</li>
+        </ul>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h3 class="text-sm font-bold text-white mb-3">바로가기</h3>
+        <ul class="space-y-1.5 text-sm" style="color:var(--text-muted);">
+          <li><a href="#about" class="hover:text-white transition-colors">세미나 소개</a></li>
+          <li><a href="#speakers" class="hover:text-white transition-colors">연사 소개</a></li>
+          <li><a href="#program" class="hover:text-white transition-colors">프로그램</a></li>
+          <li><a href="#series" class="hover:text-white transition-colors">2026 세미나 시리즈</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">사전 신청</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs" style="border-color:rgba(255,255,255,0.06); color:var(--text-muted);">
+      <p>© 2026 초기투자액셀러레이터협회. All rights reserved.</p>
+      <p>초기투자 정책 세미나 · 2026 시리즈</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // ── AOS Init ──
+  AOS.init({
+    duration: 700,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 60,
+  });
+
+  // ── Navbar scroll effect ──
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  // ── Hamburger menu ──
+  const hamburgerBtn  = document.getElementById('hamburger-btn');
+  const mobileMenu    = document.getElementById('mobile-menu');
+  const ham1 = document.getElementById('ham-1');
+  const ham2 = document.getElementById('ham-2');
+  const ham3 = document.getElementById('ham-3');
+
+  function openMobileMenu() {
+    mobileMenu.classList.add('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    ham1.style.transform = 'translateY(8px) rotate(45deg)';
+    ham2.style.opacity   = '0';
+    ham3.style.transform = 'translateY(-8px) rotate(-45deg)';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    ham1.style.transform = '';
+    ham2.style.opacity   = '';
+    ham3.style.transform = '';
+    document.body.style.overflow = '';
+  }
+
+  hamburgerBtn.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('open')) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  });
+
+  // Close mobile menu on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  });
+
+  // ── Accordion ──
+  function toggleAccordion(btn) {
+    const item    = btn.closest('.accordion-item');
+    const content = item.querySelector('.accordion-content');
+    const isOpen  = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.accordion-item.open').forEach(openItem => {
+      openItem.classList.remove('open');
+      openItem.querySelector('.accordion-content').classList.remove('open');
+      openItem.querySelector('button').setAttribute('aria-expanded', 'false');
+    });
+
+    // Open clicked if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      content.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // ── Active nav link on scroll ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('#navbar a[href^="#"]');
+
+  function updateActiveLink() {
+    const scrollY = window.scrollY + 120;
+    sections.forEach(section => {
+      const sectionTop    = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const id = section.getAttribute('id');
+      const link = document.querySelector(`#navbar a[href="#${id}"]`);
+      if (link) {
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          link.style.color = '#28ADAD';
+        } else {
+          link.style.color = '';
+        }
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+</script>
+
+</body>
+</html>
