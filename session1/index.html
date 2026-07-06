@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>제2회 초기투자 정책 세미나 | 초기투자액셀러레이터협회</title>
-  <meta name="description" content="초기투자액셀러레이터협회와 서울창업허브 엠플러스가 공동 주최하는 제2회 초기투자 정책 세미나. '액셀러레이터의 생존방식 - 지속가능한 비즈니스 모델을 찾아서'. 2026년 7월 27일(월) 서울창업허브 엠플러스." />
-  <meta property="og:title" content="제2회 초기투자 정책 세미나 | 액셀러레이터의 생존방식" />
-  <meta property="og:description" content="AC 10년, 무엇으로 지속 가능한가 - 액셀러레이터의 수익구조와 지속가능한 비즈니스 모델을 진단하는 세미나 (2026.7.27)" />
+  <title>초기투자 정책 세미나 | 초기투자액셀러레이터협회</title>
+  <meta name="description" content="초기투자액셀러레이터협회가 2026년 개최하는 초기투자 정책 세미나 시리즈. 로컬 창업 투자, AI 규제, 벤처투자 회수 등 초기투자 핵심 정책 현안을 다룹니다." />
+  <meta property="og:title" content="초기투자 정책 세미나 | 초기투자액셀러레이터협회" />
+  <meta property="og:description" content="로컬 창업 투자, AI 규제, 벤처투자 회수 전략 등 초기투자 생태계 핵심 정책을 논의하는 세미나" />
   <meta property="og:image" content="https://k-aia-association.github.io/2026_policy_seminar/images/og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ko_KR" />
@@ -28,9 +28,8 @@
       theme: {
         extend: {
           colors: {
-            teal: { DEFAULT: '#1f7a5c', dark: '#17604a', light: '#35a37d' },
-            navy: { DEFAULT: '#103527', dark: '#0a2419', light: '#17513a' },
-            gold: { DEFAULT: '#d4af6a', dark: '#b8934e', light: '#e6c88a' },
+            teal: { DEFAULT: '#28ADAD', dark: '#1d8f8f', light: '#4dc4c4' },
+            navy: { DEFAULT: '#182B52', dark: '#0f1c35', light: '#243e73' },
           },
           fontFamily: {
             sans: ['Pretendard', 'Inter', 'system-ui', 'sans-serif'],
@@ -42,11 +41,10 @@
 
   <style>
     :root {
-      --teal: #1f7a5c;
-      --gold: #d4af6a;
-      --navy: #103527;
-      --bg: #0b1a14;
-      --bg2: #0f2018;
+      --teal: #28ADAD;
+      --navy: #182B52;
+      --bg: #0a0a0a;
+      --bg2: #111111;
       --text: #f9fafb;
       --text-muted: #9ca3af;
       --text-secondary: #e5e7eb;
@@ -68,10 +66,24 @@
     ::-webkit-scrollbar-track { background: #111; }
     ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
 
+    /* ── Archive banner ── */
+    #archive-banner {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: #182B52;
+      color: #fff;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    #archive-banner a { color: #28ADAD; font-weight: 700; text-decoration: underline; }
+
     /* ── Navbar ── */
     #navbar {
       position: fixed;
-      top: 0;
+      top: 40px;
       left: 0;
       right: 0;
       z-index: 100;
@@ -79,10 +91,10 @@
       padding: 1rem 0;
     }
     #navbar.scrolled {
-      background: rgba(11, 26, 20, 0.82);
+      background: rgba(10, 10, 10, 0.82);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 1px 0 rgba(31, 122, 92, 0.15);
+      box-shadow: 0 1px 0 rgba(40, 173, 173, 0.15);
     }
 
     /* ── Hero Aurora ── */
@@ -110,9 +122,9 @@
       50%       { transform: translateY(-30px) translateX(15px); opacity: 0.8; }
     }
     @keyframes pulse-ring {
-      0%   { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(31,122,92,0.5); }
-      70%  { transform: scale(1); box-shadow: 0 0 0 14px rgba(31,122,92,0); }
-      100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(31,122,92,0); }
+      0%   { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(40,173,173,0.5); }
+      70%  { transform: scale(1); box-shadow: 0 0 0 14px rgba(40,173,173,0); }
+      100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(40,173,173,0); }
     }
     @keyframes shimmer {
       0%   { background-position: -200% center; }
@@ -125,12 +137,12 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: #0b1a14;
+      background: #090d14;
     }
     .aurora-bg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #0b1a14 0%, #103527 40%, #0e3a29 60%, #0b1a14 100%);
+      background: linear-gradient(135deg, #090d14 0%, #182B52 40%, #0d2240 60%, #090d14 100%);
       background-size: 300% 300%;
       animation: auroraShift 12s ease infinite;
     }
@@ -142,19 +154,19 @@
     }
     .blob-1 {
       width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(31,122,92,0.35) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(40,173,173,0.35) 0%, transparent 70%);
       top: -100px; left: -150px;
       animation: auroraBlob1 14s ease-in-out infinite;
     }
     .blob-2 {
       width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(16,53,39,0.8) 0%, rgba(31,122,92,0.2) 50%, transparent 70%);
+      background: radial-gradient(circle, rgba(24,43,82,0.8) 0%, rgba(40,173,173,0.2) 50%, transparent 70%);
       bottom: -80px; right: -100px;
       animation: auroraBlob2 18s ease-in-out infinite;
     }
     .blob-3 {
       width: 350px; height: 350px;
-      background: radial-gradient(circle, rgba(31,122,92,0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(40,173,173,0.2) 0%, transparent 70%);
       top: 40%; left: 55%;
       animation: auroraBlob3 10s ease-in-out infinite;
     }
@@ -168,8 +180,8 @@
       transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
     .glass-card:hover {
-      border-color: rgba(31,122,92,0.4);
-      box-shadow: 0 8px 32px rgba(31,122,92,0.12);
+      border-color: rgba(40,173,173,0.4);
+      box-shadow: 0 8px 32px rgba(40,173,173,0.12);
     }
 
     /* ── Speaker Card ── */
@@ -182,8 +194,8 @@
     }
     .speaker-card:hover {
       transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 60px rgba(31,122,92,0.2), 0 0 0 1px rgba(31,122,92,0.5);
-      border-color: rgba(31,122,92,0.6);
+      box-shadow: 0 20px 60px rgba(40,173,173,0.2), 0 0 0 1px rgba(40,173,173,0.5);
+      border-color: rgba(40,173,173,0.6);
     }
     .speaker-avatar {
       width: 100px; height: 100px;
@@ -202,7 +214,7 @@
       position: absolute;
       inset: -3px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #1f7a5c, #103527);
+      background: linear-gradient(135deg, #28ADAD, #182B52);
       z-index: -1;
     }
 
@@ -229,7 +241,7 @@
       border-radius: 50%;
       background: var(--teal);
       border: 3px solid var(--bg2);
-      box-shadow: 0 0 12px rgba(31,122,92,0.5);
+      box-shadow: 0 0 12px rgba(40,173,173,0.5);
     }
 
     /* ── Accordion ── */
@@ -240,7 +252,7 @@
       transition: border-color 0.3s;
     }
     .accordion-item.open {
-      border-color: rgba(31,122,92,0.4);
+      border-color: rgba(40,173,173,0.4);
     }
     .accordion-btn {
       width: 100%;
@@ -257,12 +269,12 @@
       color: var(--text);
       font-family: inherit;
     }
-    .accordion-btn:hover { background: rgba(31,122,92,0.08); }
+    .accordion-btn:hover { background: rgba(40,173,173,0.08); }
     .accordion-icon {
       width: 24px; height: 24px;
       flex-shrink: 0;
       border-radius: 50%;
-      background: rgba(31,122,92,0.15);
+      background: rgba(40,173,173,0.15);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -273,7 +285,7 @@
     }
     .accordion-item.open .accordion-icon {
       transform: rotate(45deg);
-      background: rgba(31,122,92,0.3);
+      background: rgba(40,173,173,0.3);
     }
     .accordion-content {
       max-height: 0;
@@ -295,8 +307,8 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .series-card.active {
-      border-color: rgba(31,122,92,0.6);
-      box-shadow: 0 0 30px rgba(31,122,92,0.15);
+      border-color: rgba(40,173,173,0.6);
+      box-shadow: 0 0 30px rgba(40,173,173,0.15);
     }
     .series-card:hover:not(.active) {
       transform: translateY(-4px);
@@ -305,7 +317,7 @@
     .coming-soon-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(11,26,20,0.65);
+      background: rgba(10,10,10,0.65);
       backdrop-filter: blur(2px);
       display: flex;
       align-items: center;
@@ -318,8 +330,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: linear-gradient(135deg, #35a37d 0%, #1f7a5c 55%, #17604a 100%);
-      color: #eafff6;
+      background: linear-gradient(135deg, #28ADAD 0%, #1d8f8f 100%);
+      color: white;
       font-weight: 700;
       padding: 1rem 2.5rem;
       border-radius: 50px;
@@ -333,7 +345,7 @@
     }
     .cta-btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 10px 40px rgba(31,122,92,0.5);
+      box-shadow: 0 10px 40px rgba(40,173,173,0.5);
       animation: none;
     }
     .cta-btn-outline {
@@ -369,25 +381,25 @@
       letter-spacing: 0.03em;
     }
     .badge-teal {
-      background: rgba(31,122,92,0.15);
+      background: rgba(40,173,173,0.15);
       color: var(--teal);
-      border: 1px solid rgba(31,122,92,0.35);
+      border: 1px solid rgba(40,173,173,0.35);
     }
     .badge-navy {
-      background: rgba(16,53,39,0.6);
+      background: rgba(24,43,82,0.6);
       color: #93c5fd;
-      border: 1px solid rgba(16,53,39,0.8);
+      border: 1px solid rgba(24,43,82,0.8);
     }
     .badge-active {
-      background: rgba(31,122,92,0.2);
-      color: #7fe0b8;
-      border: 1px solid rgba(31,122,92,0.5);
+      background: rgba(40,173,173,0.2);
+      color: #5ee3e3;
+      border: 1px solid rgba(40,173,173,0.5);
       animation: pulse-ring 3s ease-in-out infinite;
     }
 
     /* ── Section ── */
     .section { padding: 6rem 0; }
-    .section-alt { background: #0b1710; }
+    .section-alt { background: #0d1117; }
     .section-title {
       font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 800;
@@ -395,7 +407,7 @@
     }
     .teal-text { color: var(--teal); }
     .gradient-text {
-      background: linear-gradient(135deg, #2f9e77 0%, #9be9c4 50%, #2f9e77 100%);
+      background: linear-gradient(135deg, #28ADAD 0%, #7dd3d3 50%, #28ADAD 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -417,7 +429,7 @@
       position: fixed;
       inset: 0;
       z-index: 99;
-      background: rgba(11,26,20,0.97);
+      background: rgba(10,10,10,0.97);
       backdrop-filter: blur(20px);
       flex-direction: column;
       align-items: center;
@@ -430,8 +442,8 @@
     .icon-circle {
       width: 56px; height: 56px;
       border-radius: 50%;
-      background: rgba(31,122,92,0.12);
-      border: 1px solid rgba(31,122,92,0.25);
+      background: rgba(40,173,173,0.12);
+      border: 1px solid rgba(40,173,173,0.25);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -447,6 +459,13 @@
   </style>
 </head>
 <body>
+
+<!-- ════════════════════════════════════════════
+     ARCHIVE BANNER
+════════════════════════════════════════════ -->
+<div id="archive-banner">
+  📌 종료된 세미나입니다 (제1회 · 2026.4.30) · <a href="../">최신 세미나 보기 →</a>
+</div>
 
 <!-- ════════════════════════════════════════════
      NAVBAR
@@ -505,28 +524,28 @@
         <!-- Badges -->
         <div class="flex flex-wrap gap-2 mb-6">
           <span class="badge badge-active">
-            <span class="inline-block w-1.5 h-1.5 rounded-full bg-teal-300 mr-1.5" style="background:#7fe0b8;"></span>
-            제2회
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-teal-300 mr-1.5" style="background:#5ee3e3;"></span>
+            제1회
           </span>
           <span class="badge badge-teal">50석 한정</span>
-          <span class="badge badge-navy">2026년 7월 27일</span>
+          <span class="badge badge-navy">2026년 4월 30일</span>
         </div>
 
         <!-- Label -->
-        <p class="text-sm font-semibold tracking-widest uppercase mb-3" style="color:#6cc9a3;">
-          초기투자액셀러레이터협회 · 서울창업허브 엠플러스 공동 주최
+        <p class="text-sm font-semibold tracking-widest uppercase mb-3" style="color:var(--teal);">
+          초기투자액셀러레이터협회 주최
         </p>
 
         <!-- Title -->
         <h1 class="section-title text-white mb-4" style="font-size: clamp(2rem, 5.5vw, 3.5rem);">
-          액셀러레이터의<br />
-          <span class="gradient-text">생존방식</span>
+          초기투자<br />
+          <span class="gradient-text">정책 세미나</span>
         </h1>
 
         <!-- Topic -->
         <p class="text-lg md:text-xl font-medium mb-2" style="color:var(--text-secondary); line-height:1.6;">
-          지속가능한 비즈니스 모델을 찾아서<br />
-          AC 10년, 무엇으로 지속 가능한가
+          로컬 창업과 초기투자<br />
+          AC/VC의 새로운 기회와 정책적 과제
         </p>
 
         <!-- Meta info -->
@@ -535,13 +554,13 @@
             <svg class="w-4 h-4 flex-shrink-0" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            2026년 7월 27일(월)
+            2026년 4월 30일(목)
           </div>
           <div class="flex items-center gap-2">
             <svg class="w-4 h-4 flex-shrink-0" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            16:00 ~ 18:00 (120분)
+            16:00 ~ 17:30 (90분)
           </div>
           <div class="flex items-center gap-2">
             <svg class="w-4 h-4 flex-shrink-0" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -560,7 +579,7 @@
 
         <!-- CTA -->
         <div class="flex flex-wrap gap-3">
-          <a href="https://forms.gle/mX3dzeByizxCS84A7" target="_blank" rel="noopener noreferrer" class="cta-btn">
+          <a href="https://forms.gle/YdKQ49e2GsW5JwTz5" target="_blank" rel="noopener noreferrer" class="cta-btn">
             신청하기
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -574,14 +593,13 @@
 
       <!-- 우측: Spline 3D (데스크톱만 표시) -->
       <div class="hidden md:block relative" style="min-height: 600px;">
-        <iframe
+        <spline-viewer
           id="spline-hero"
-          src="https://my.spline.design/clonercubesimplecopy-OsoCkuJlh3GBJZnEGyN0PtGO/"
-          frameborder="0"
+          url="https://prod.spline.design/BcqVo6oyPYk8SmQ1/scene.splinecode"
+          events-target="none"
+          style="width: 100%; height: 600px; border: none;"
           loading="lazy"
-          title="3D 비주얼"
-          style="width: 100%; height: 600px; border: none; pointer-events: none;"
-        ></iframe>
+        ></spline-viewer>
       </div>
     </div>
   </div>
@@ -611,10 +629,10 @@
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div data-aos="fade-right">
         <p class="text-lg leading-relaxed mb-5" style="color:var(--text-secondary);">
-          <span class="font-bold text-white">초기투자액셀러레이터협회</span>와 <span class="font-bold text-white">서울창업허브 엠플러스</span>가 공동 주최하는 <span class="teal-text font-semibold">초기투자 정책 세미나 시리즈</span>, 그 두 번째 자리입니다.
+          <span class="font-bold text-white">초기투자액셀러레이터협회</span>는 AC·VC·CVC 종사자, 창업 유관기관, 정책기관, 스타트업 생태계를 연결하는 <span class="teal-text font-semibold">정책 세미나 시리즈</span>를 2026년 3회에 걸쳐 개최합니다.
         </p>
         <p class="text-base leading-relaxed mb-5" style="color:var(--text-muted);">
-          AC(액셀러레이터) 등록제 도입 <strong class="text-white">10년</strong>, 양적 성장의 이면에는 양극화와 정부지원사업 의존이라는 현실이 있습니다. 스타트업을 가속하는 AC는 정작 <strong class="text-white">무엇으로 지속 가능한가</strong>. 제2회 세미나는 이 질문을 <span class="teal-text font-semibold">데이터 · 연구 · 실무</span> 세 관점에서 진단하고, 다음 10년의 비즈니스 모델을 모색합니다.
+          제1회 세미나는 <strong class="text-white">「모두의 지역상권 추진전략」</strong>이 발표된 지금, AC/VC가 로컬 투자 시장에서 어떤 기회를 포착하고 어떻게 참여할 수 있는지 심층 논의합니다. LIPS 프로그램, 모태펀드 지역투자 의무, 상권형 펀드 등 실무 전략이 함께 다뤄집니다.
         </p>
         <p class="text-base leading-relaxed" style="color:var(--text-muted);">
           정원은 <strong class="text-white">50명</strong>으로 소규모 밀도 높은 논의를 지향합니다.
@@ -631,8 +649,8 @@
             </svg>
           </div>
           <div>
-            <h3 class="font-bold text-white text-base mb-1">데이터 · 현황 진단</h3>
-            <p class="text-sm" style="color:var(--text-muted);">AC 제도 10년의 양적 성장과 그 이면 - 양극화·저활동이라는 현실을 협회 데이터로 진단합니다.</p>
+            <h3 class="font-bold text-white text-base mb-1">정책 분석</h3>
+            <p class="text-sm" style="color:var(--text-muted);">「모두의 지역상권 추진전략」의 핵심과 LIPS 프로그램, 모태펀드 지역투자 의무 등 AC/VC에 직접 영향을 주는 정책 변화를 분석합니다.</p>
           </div>
         </div>
         <!-- Card 2 -->
@@ -643,8 +661,8 @@
             </svg>
           </div>
           <div>
-            <h3 class="font-bold text-white text-base mb-1">연구 · 효과 입증</h3>
-            <p class="text-sm" style="color:var(--text-muted);">국내외 실증연구로 "AC는 정말 효과가 있는가"에 답하며, 자금·학습·네트워크라는 AC의 고유 가치를 확인합니다.</p>
+            <h3 class="font-bold text-white text-base mb-1">투자 기회</h3>
+            <p class="text-sm" style="color:var(--text-muted);">로컬기업 밸류에이션, LIPS 매칭 구조, 상권형 투자펀드, EXIT 시나리오 등 실무적 투자 전략을 논의합니다.</p>
           </div>
         </div>
         <!-- Card 3 -->
@@ -655,8 +673,8 @@
             </svg>
           </div>
           <div>
-            <h3 class="font-bold text-white text-base mb-1">실무 · 수익구조</h3>
-            <p class="text-sm" style="color:var(--text-muted);">AC의 수익구조와 정부 의존의 함정, 회수 기반 자생 모델로의 전환을 실무 관점에서 논의합니다.</p>
+            <h3 class="font-bold text-white text-base mb-1">네트워킹</h3>
+            <p class="text-sm" style="color:var(--text-muted);">AC·VC·CVC·정책기관·스타트업 종사자 50인이 한 자리에 모여 긴밀한 산업 네트워크를 형성합니다.</p>
           </div>
         </div>
       </div>
@@ -677,31 +695,31 @@
       <div class="teal-divider mx-auto mt-4"></div>
     </div>
 
-    <!-- 발제 라벨 -->
+    <!-- 1회차 라벨 -->
     <div class="flex items-center gap-3 mb-8" data-aos="fade-up" data-aos-delay="50">
-      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold border" style="background: rgba(31,122,92,0.1); border-color: #1f7a5c; color: #1f7a5c;">
+      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold border" style="background: rgba(40,173,173,0.1); border-color: #28ADAD; color: #28ADAD;">
         <span class="w-2 h-2 rounded-full bg-teal inline-block animate-pulse"></span>
-        제2회 발제
+        1회차 연사
       </span>
-      <span class="text-sm" style="color:var(--text-muted);">데이터(현황) · 연구(효과) · 실무(수익구조) 3개 발제</span>
+      <span class="text-sm" style="color:var(--text-muted);">로컬 창업과 초기투자 — AC/VC의 새로운 기회와 정책적 과제</span>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6">
 
-      <!-- Speaker 1: 발제 1 (공성현) -->
+      <!-- Speaker 1: 발제 1 (장현석) -->
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="100">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#0b1a14; background:linear-gradient(135deg,#1f7a5c,#35a37d);">공</div>
+            <img src="images/speaker-03.png" alt="장현석 실장" class="speaker-avatar" style="width:84px; height:84px; object-fit: cover; object-position: center 15%;" />
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
-                <span class="badge badge-teal">발제 1 · 데이터</span>
+                <span class="badge badge-teal">발제 1</span>
               </div>
-              <h3 class="text-xl font-bold text-white">공성현</h3>
-              <p class="text-sm font-medium mt-0.5" style="color:var(--teal);">초기투자액셀러레이터협회<br />사무국장</p>
+              <h3 class="text-xl font-bold text-white">장현석</h3>
+              <p class="text-sm font-medium mt-0.5" style="color:var(--teal);">초기투자액셀러레이터협회<br />생태계협력실장</p>
               <div class="mt-2 pt-2 text-xs leading-relaxed" style="color:var(--text-muted); border-top: 1px solid rgba(255,255,255,0.08);">
-                · KAIA 사무국 총괄<br />
-                · AC 산업 데이터 분석
+                · LIPS 사업 총괄 운영<br />
+                · 前 퓨처플레이
               </div>
             </div>
           </div>
@@ -711,49 +729,49 @@
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              AC 제도 10년의 양적 성장
+              「모두의 지역상권」 점·선·면 3단계 전략
             </div>
             <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              그 이면의 양극화·저활동 현실
+              LIPS 주관기관 시각의 정책 브리핑
             </div>
             <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              투자 활동·집중도를 데이터로 진단
+              AC/VC 관점 — 무엇이 달라지는가
             </div>
             <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              발제 2·3의 통계적 토대 제시
+              로컬창업스튜디오 · 라이콘펀드 · 전담투자기관
             </div>
           </div>
 
-          <div class="rounded-xl p-3.5" style="background: rgba(31,122,92,0.08); border: 1px solid rgba(31,122,92,0.2);">
+          <div class="rounded-xl p-3.5" style="background: rgba(40,173,173,0.08); border: 1px solid rgba(40,173,173,0.2);">
             <p class="text-[10px] font-semibold uppercase tracking-wider mb-1" style="color:var(--teal);">발제 주제</p>
-            <p class="text-xs font-medium text-white leading-snug">데이터로 본 AC 10년<br />양적 성장과 그 이면(양극화·저활동)</p>
+            <p class="text-xs font-medium text-white leading-snug">LIPS × 「모두의 지역상권 추진전략」<br />— 협회의 방향성과 AC/VC 안착 가이드</p>
           </div>
         </div>
       </article>
 
-      <!-- Speaker 2: 발제 2 (성창수) -->
+      <!-- Speaker 2: 발제 2 (임효묵) -->
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="200">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#0b1a14; background:linear-gradient(135deg,#1f7a5c,#35a37d);">성</div>
+            <img src="images/speaker-01.jpg" alt="임효묵 사무국장" class="speaker-avatar" style="width:84px; height:84px; object-fit: cover; object-position: center 15%;" />
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
-                <span class="badge badge-teal">발제 2 · 연구</span>
+                <span class="badge badge-teal">발제 2</span>
               </div>
-              <h3 class="text-xl font-bold text-white">성창수</h3>
-              <p class="text-sm font-medium mt-0.5" style="color:var(--teal);">동국대학교<br />교수</p>
+              <h3 class="text-xl font-bold text-white">임효묵</h3>
+              <p class="text-sm font-medium mt-0.5" style="color:var(--teal);">(사)로컬브랜드포럼<br />사무국장</p>
               <div class="mt-2 pt-2 text-xs leading-relaxed" style="color:var(--text-muted); border-top: 1px solid rgba(255,255,255,0.08);">
-                · 창업·기업가정신 연구<br />
-                · 2025 KAIA 정책토론회 발제
+                · 건국대 부동산학 석사<br />
+                · 現 스테디윈스(주) 이사
               </div>
             </div>
           </div>
@@ -763,49 +781,49 @@
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              Timmons 모델과 AC의 역할 매핑
+              로컬 투자 회수의 구조적 한계
             </div>
             <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              AC vs 인큐베이터·엔젤 비교
+              성장 3단계 — 생존 · 락인 · 동네 대기업
             </div>
             <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              실증연구로 본 "AC는 효과가 있는가"
+              진짜 병목 — 생존 인프라 · 공간 자산
             </div>
             <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              AC 고유가치 - 자금·학습·네트워크
+              로컬 플랫폼 · F&B 그룹 진화와 투자 가치
             </div>
           </div>
 
-          <div class="rounded-xl p-3.5" style="background: rgba(31,122,92,0.08); border: 1px solid rgba(31,122,92,0.2);">
+          <div class="rounded-xl p-3.5" style="background: rgba(40,173,173,0.08); border: 1px solid rgba(40,173,173,0.2);">
             <p class="text-[10px] font-semibold uppercase tracking-wider mb-1" style="color:var(--teal);">발제 주제</p>
-            <p class="text-xs font-medium text-white leading-snug">액셀러레이터는 스타트업의<br />성장을 어떻게 가속화하는가?</p>
+            <p class="text-xs font-medium text-white leading-snug">로컬 브랜드 생태계 현실과 투자의 접점<br />— '동네 대기업'은 어떻게 만들어지는가</p>
           </div>
         </div>
       </article>
 
-      <!-- Speaker 3: 발제 3 (섭외 중) -->
+      <!-- Speaker 3: 발제 3 (권혁태) -->
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="300">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#6cc9a3; background:rgba(31,122,92,0.12); border:1.5px dashed rgba(53,163,125,0.55);">?</div>
+            <img src="images/speaker-02.jpg" alt="권혁태 대표" class="speaker-avatar" style="width:84px; height:84px; object-fit: cover; object-position: center 20%;" />
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
-                <span class="badge badge-teal">발제 3 · 실무</span>
+                <span class="badge badge-teal">발제 3</span>
               </div>
-              <h3 class="text-xl font-bold text-white">섭외 중</h3>
-              <p class="text-sm font-medium mt-0.5" style="color:#6cc9a3;">AC 업계 대표자<br />(연사 확정 후 공개)</p>
+              <h3 class="text-xl font-bold text-white">권혁태</h3>
+              <p class="text-sm font-medium mt-0.5" style="color:var(--teal);">어번데일벤처스<br />대표</p>
               <div class="mt-2 pt-2 text-xs leading-relaxed" style="color:var(--text-muted); border-top: 1px solid rgba(255,255,255,0.08);">
-                · 자생 모델을 실천하는<br />
-                · AC 업계 리더 섭외 예정
+                · 미국 뱁슨칼리지(Babson) MBA<br />
+                · 前 쿨리지코너인베스트먼트 대표
               </div>
             </div>
           </div>
@@ -815,31 +833,31 @@
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              AC 수익원 4분류와 현실
+              로컬 스타트업 투자 기준 프레임워크
             </div>
             <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              정부사업 의존의 함정
+              로컬크리에이터 × 상권기획 접점
             </div>
             <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              회수시장 미성숙이라는 출구 봉쇄
+              라이콘펀드 · 상권펀드 활용 전략
             </div>
             <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              자생 모델 모색 (OI·벤처스튜디오·글로벌)
+              AC/VC 로컬 투자 안착을 위한 실무 로드맵
             </div>
           </div>
 
-          <div class="rounded-xl p-3.5" style="background: rgba(31,122,92,0.08); border: 1px solid rgba(31,122,92,0.2);">
+          <div class="rounded-xl p-3.5" style="background: rgba(40,173,173,0.08); border: 1px solid rgba(40,173,173,0.2);">
             <p class="text-[10px] font-semibold uppercase tracking-wider mb-1" style="color:var(--teal);">발제 주제</p>
-            <p class="text-xs font-medium text-white leading-snug">AC 10년, 무엇으로 먹고 사는가<br />수익구조의 현실과 정부 의존의 함정</p>
+            <p class="text-xs font-medium text-white leading-snug">AC/VC의 로컬 투자 전략<br />— 투자 기준 · 상권기획 · 라이콘/상권펀드</p>
           </div>
         </div>
       </article>
@@ -859,113 +877,83 @@
       <p class="text-sm font-semibold tracking-widest uppercase mb-2" style="color:var(--teal);">Program</p>
       <h2 id="program-title" class="section-title text-white">세미나 프로그램</h2>
       <div class="teal-divider mx-auto mt-4"></div>
-      <p class="mt-4 text-base" style="color:var(--text-muted);">2026년 7월 27일(월) · 16:00 ~ 18:00 (총 120분)</p>
+      <p class="mt-4 text-base" style="color:var(--text-muted);">2026년 4월 30일(목) · 16:00 ~ 17:30 (총 90분)</p>
     </div>
 
     <div class="max-w-3xl mx-auto space-y-8">
 
-      <!-- Item 1: 안내 -->
+      <!-- Item 1 -->
       <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="glass-card p-6 ml-2">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div>
               <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">16:00 ~ 16:05</span>
-              <h3 class="text-lg font-bold text-white mt-1">안내 및 행사 소개</h3>
+              <h3 class="text-lg font-bold text-white mt-1">개회 및 2025 초기투자생태계 산업설문조사 요약</h3>
             </div>
-            <span class="badge badge-navy flex-shrink-0">KAIA 사무국</span>
+            <span class="badge badge-navy flex-shrink-0">미래전략기획팀</span>
           </div>
-          <p class="text-sm mt-2" style="color:var(--text-muted);">5분 - 개회 인사 및 세미나 취지 안내</p>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">5분 — 개회 인사 및 2025 액셀러레이터 산업설문조사 주요 결과 브리핑</p>
         </div>
       </div>
 
-      <!-- Item 2: 발제 1 (공성현) -->
+      <!-- Item 2: 발제 1 (장현석) -->
       <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="glass-card p-6 ml-2">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">16:05 ~ 16:20</span>
-              <h3 class="text-lg font-bold text-white mt-1">[발제 1] 데이터로 본 AC 10년</h3>
+              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">16:05 ~ 16:25</span>
+              <h3 class="text-lg font-bold text-white mt-1">[발제 1] LIPS × 「모두의 지역상권 추진전략」 — 협회의 방향성</h3>
             </div>
-            <span class="badge badge-teal flex-shrink-0">공성현</span>
+            <span class="badge badge-teal flex-shrink-0">장현석</span>
           </div>
-          <p class="text-sm mt-2" style="color:var(--text-muted);">15분 - 협회 데이터로 본 AC 제도 10년의 양적 성장과 그 이면(양극화·저활동)</p>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 — LIPS 주관기관 시각의 정책 연계, 민간 선투자·정부 매칭 5배 구조, 로컬앵커·상권기획자 신규 투자 파이프라인</p>
         </div>
       </div>
 
-      <!-- Item 3: 발제 2 (성창수) -->
+      <!-- Item 3: 발제 2 (임효묵) -->
       <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="glass-card p-6 ml-2">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">16:20 ~ 16:40</span>
-              <h3 class="text-lg font-bold text-white mt-1">[발제 2] 액셀러레이터는 스타트업의 성장을 어떻게 가속화하는가?</h3>
+              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">16:25 ~ 16:45</span>
+              <h3 class="text-lg font-bold text-white mt-1">[발제 2] 로컬 브랜드 생태계 현실과 투자의 접점</h3>
             </div>
-            <span class="badge badge-teal flex-shrink-0">성창수</span>
+            <span class="badge badge-teal flex-shrink-0">임효묵</span>
           </div>
-          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 - 국내외 실증연구로 답하는 AC의 효과와 고유가치(자금·학습·네트워크)</p>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 — 로컬 투자 회수의 구조적 한계, 성장 3단계(생존→락인→동네 대기업), 투자자와 로컬의 접점</p>
         </div>
       </div>
 
-      <!-- Item 4: 발제 3 (섭외 중) -->
+      <!-- Item 4: 발제 3 (권혁태) -->
       <div class="timeline-item" data-aos="fade-up" data-aos-delay="250">
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="glass-card p-6 ml-2">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">16:40 ~ 17:00</span>
-              <h3 class="text-lg font-bold text-white mt-1">[발제 3] AC 10년, 무엇으로 먹고 사는가</h3>
+              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">16:45 ~ 17:05</span>
+              <h3 class="text-lg font-bold text-white mt-1">[발제 3] AC/VC의 로컬 투자 전략</h3>
             </div>
-            <span class="badge badge-teal flex-shrink-0">섭외 중</span>
+            <span class="badge badge-teal flex-shrink-0">권혁태</span>
           </div>
-          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 - 수익구조의 현실과 정부 의존의 함정, 회수 기반 자생 모델로의 전환</p>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 — 로컬 스타트업 투자 기준, 로컬크리에이터와 상권기획, 라이콘펀드와 상권펀드</p>
         </div>
       </div>
 
-      <!-- Item 5: 휴식 -->
-      <div class="timeline-item" data-aos="fade-up" data-aos-delay="280">
-        <div class="timeline-dot" aria-hidden="true"></div>
-        <div class="glass-card p-6 ml-2">
-          <div class="flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">17:00 ~ 17:10</span>
-              <h3 class="text-lg font-bold text-white mt-1">쉬는 시간 &amp; 네트워킹</h3>
-            </div>
-            <span class="badge badge-navy flex-shrink-0">Break</span>
-          </div>
-          <p class="text-sm mt-2" style="color:var(--text-muted);">10분 - 잠시 쉬어가며 참가자 간 자유 교류</p>
-        </div>
-      </div>
-
-      <!-- Item 6: 패널 -->
+      <!-- Item 5: 패널 -->
       <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
         <div class="timeline-dot" aria-hidden="true"></div>
-        <div class="glass-card p-6 ml-2" style="border-color: rgba(31,122,92,0.3); background: rgba(31,122,92,0.06);">
+        <div class="glass-card p-6 ml-2" style="border-color: rgba(40,173,173,0.3); background: rgba(40,173,173,0.06);">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">17:10 ~ 17:40</span>
-              <h3 class="text-lg font-bold text-white mt-1">[패널 토론] AC는 무엇으로 지속 가능할까?</h3>
+              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">17:05 ~ 17:30</span>
+              <h3 class="text-lg font-bold text-white mt-1">[패널 토론] 로컬 창업 투자, 정책과 비즈니스의 교차점</h3>
             </div>
-            <span class="badge badge-active flex-shrink-0">발제자 + 패널</span>
+            <span class="badge badge-active flex-shrink-0">발제자 3인 + 진행</span>
           </div>
-          <p class="text-sm mt-2" style="color:var(--text-muted);">30분 - 정체성·정부 의존·회수·자생 모델·역할 분담을 둘러싼 심층 토론</p>
-        </div>
-      </div>
-
-      <!-- Item 7: 네트워킹 -->
-      <div class="timeline-item" data-aos="fade-up" data-aos-delay="320">
-        <div class="timeline-dot" aria-hidden="true"></div>
-        <div class="glass-card p-6 ml-2">
-          <div class="flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">17:40 ~ 18:00</span>
-              <h3 class="text-lg font-bold text-white mt-1">자유 네트워킹</h3>
-            </div>
-            <span class="badge badge-navy flex-shrink-0">Networking</span>
-          </div>
-          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 - AC·VC·정책기관·스타트업 참가자 간 네트워킹</p>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">25분 — 발제자 3인이 함께하는 심층 토론 (정책 · 협회 · 투자 3각 구도)</p>
         </div>
       </div>
 
@@ -984,7 +972,7 @@
       <p class="text-sm font-semibold tracking-widest uppercase mb-2" style="color:var(--teal);">Panel Discussion</p>
       <h2 id="panel-title" class="section-title text-white">패널 토론 주제</h2>
       <div class="teal-divider mx-auto mt-4"></div>
-      <p class="mt-4 text-base" style="color:var(--text-muted);">AC는 무엇으로 지속 가능할까? · 5가지 핵심 의제</p>
+      <p class="mt-4 text-base" style="color:var(--text-muted);">로컬 창업 투자, 정책과 비즈니스의 교차점 — 5가지 핵심 의제</p>
     </div>
 
     <div class="max-w-3xl mx-auto space-y-3" id="accordion">
@@ -992,65 +980,65 @@
       <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
         <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
           <span class="flex items-center gap-3">
-            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(31,122,92,0.3);">1</span>
-            <span class="font-semibold text-left text-base">AC는 투자사인가, 정부사업 위탁기관인가</span>
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(40,173,173,0.3);">1</span>
+            <span class="font-semibold text-left text-base">로컬 창업 활성화, 정부와 민간은 각각 무엇을 해야 하는가</span>
           </span>
           <span class="accordion-icon" aria-hidden="true">+</span>
         </button>
         <div class="accordion-content">
-          <p class="text-sm" style="color:var(--text-muted);">등록은 했으나 투자하지 않는 AC가 상당수인 현실에서 'AC'라는 이름의 의미를 되묻습니다. 다수가 정부지원사업 위탁·운영보수로 연명하는 구조에서, AC의 정체성은 투자사인가 정부사업 위탁기관인가. 자연 도태에 맡길 것인가, 제도 정비로 풀 것인가를 논의합니다.</p>
+          <p class="text-sm" style="color:var(--text-muted);">점-선-면 전략의 현장 작동 가능성과 로컬 창업가 연 1만 명 발굴·육성의 실효성을 논의합니다. 새로 도입되는 로컬창업스튜디오는 기존 AC 벤처스튜디오와 무엇이 다르며 민간이 참여할 수 있는가. 보조금에서 투자로의 전환, 현장은 준비되어 있는지 진단합니다.</p>
         </div>
       </div>
 
       <div class="accordion-item" data-aos="fade-up" data-aos-delay="150">
         <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
           <span class="flex items-center gap-3">
-            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(31,122,92,0.3);">2</span>
-            <span class="font-semibold text-left text-base">정부사업 의존은 죄인가, 현실인가</span>
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(40,173,173,0.3);">2</span>
+            <span class="font-semibold text-left text-base">AC가 로컬 창업을 액셀러레이팅하려면 무엇이 달라야 하는가</span>
           </span>
           <span class="accordion-icon" aria-hidden="true">+</span>
         </button>
         <div class="accordion-content">
-          <p class="text-sm" style="color:var(--text-muted);">정부지원사업 의존이 초기투자 생태계의 마중물인가, 자생력을 갉아먹는 족쇄인가. 정부 보수 없이 지금의 초기투자 규모가 가능했을지, 의존을 줄이되 무엇으로 대체할 것인지를 함께 짚습니다. 정부지원의 명과 암을 균형 있게 논의합니다.</p>
+          <p class="text-sm" style="color:var(--text-muted);">기술 스타트업과 로컬 창업의 보육 방식 차이를 짚고, LIPS 운영사 경험에서 배운 것을 공유합니다. 지역 전담투자기관 60개 지정 — AC가 선정되면 어떤 딜플로우와 혜택이 생기는지, 로컬앵커기업 보육과 기존 AC 프로그램의 접점을 논의합니다.</p>
         </div>
       </div>
 
       <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
         <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
           <span class="flex items-center gap-3">
-            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(31,122,92,0.3);">3</span>
-            <span class="font-semibold text-left text-base">회수 없이 자생 없다 · 막힌 출구를 어떻게 뚫나</span>
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(40,173,173,0.3);">3</span>
+            <span class="font-semibold text-left text-base">상권 활성화와 투자, 어떻게 연결할 수 있는가</span>
           </span>
           <span class="accordion-icon" aria-hidden="true">+</span>
         </button>
         <div class="accordion-content">
-          <p class="text-sm" style="color:var(--text-muted);">IPO에 편중되고 M&amp;A·세컨더리가 빈약한 한국의 회수 구조에서 AC의 회수 현실을 짚습니다. 세컨더리·구주거래(2026 정책 변화)가 AC에 실질적 출구가 될 수 있는지, AC 전용 회수 채널이 필요한지를 논의합니다. 회수 없이는 자생도 없습니다.</p>
+          <p class="text-sm" style="color:var(--text-muted);">글로컬 관광상권 17곳, 로컬테마상권 50곳, 백년시장 12곳 — 특화상권 지정이 투자자에게 어떤 기회를 만드는가. 로컬앵커기업 집적지 50곳(2026)→1,000곳(2030) 목표의 현실성과 상권형 투자펀드의 가능성을 분석합니다.</p>
         </div>
       </div>
 
       <div class="accordion-item" data-aos="fade-up" data-aos-delay="250">
         <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
           <span class="flex items-center gap-3">
-            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(31,122,92,0.3);">4</span>
-            <span class="font-semibold text-left text-base">본업으로 먹고사는 AC는 무엇이 다른가</span>
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(40,173,173,0.3);">4</span>
+            <span class="font-semibold text-left text-base">모태펀드 지역투자 20% 의무와 로컬기업 전용펀드, 기회인가 부담인가</span>
           </span>
           <span class="accordion-icon" aria-hidden="true">+</span>
         </button>
         <div class="accordion-content">
-          <p class="text-sm" style="color:var(--text-muted);">오픈이노베이션, 컴퍼니빌더/벤처스튜디오, 글로벌 진출, 민간 LP화 중 한국형으로 유효한 자생 모델은 무엇인가. 자본력 있는 소수만 가능한 길인지, 중소 AC도 따라할 수 있는지를 실제 사례로 해부합니다.</p>
+          <p class="text-sm" style="color:var(--text-muted);">로컬기업 전용펀드 2,000억 원 — GP 참여 구조와 출자 조건은 어떻게 되는가. 벤처투자법 특례(AC/VC 투자의무 완화)가 실무에 미치는 영향과, 수도권 AC/VC의 지방 투자 현실적 과제(딜소싱, 모니터링)를 논의합니다.</p>
         </div>
       </div>
 
       <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
         <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
           <span class="flex items-center gap-3">
-            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(31,122,92,0.3);">5</span>
-            <span class="font-semibold text-left text-base">AC 10년, 정부·협회·AC는 각각 무엇을 해야 하나</span>
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white flex-shrink-0" style="background:rgba(40,173,173,0.3);">5</span>
+            <span class="font-semibold text-left text-base">AC/VC가 로컬 투자에 진입하려면 지금 무엇부터 해야 하는가</span>
           </span>
           <span class="accordion-icon" aria-hidden="true">+</span>
         </button>
         <div class="accordion-content">
-          <p class="text-sm" style="color:var(--text-muted);">정부(회수시장·민간자본 유도 제도), 협회(데이터·표준·공동 회수 채널), 개별 AC(수익 다각화)의 액션 아이템을 정리합니다. 2026 제도 변화(민간 벤처모펀드 완화, 개인투자조합 유연화)를 어떻게 활용할 것인지, 다음 10년의 역할 분담을 논의합니다.</p>
+          <p class="text-sm" style="color:var(--text-muted);">기술심사에서 상권분석으로의 역량 전환, LIPS 운영사·전담투자기관 신청 실무, 로컬 투자의 EXIT 설계(MBO, 배당형, 세컨더리, STO)와 5년 후 시장 전망을 논의합니다.</p>
         </div>
       </div>
 
@@ -1074,33 +1062,32 @@
 
     <div class="grid md:grid-cols-3 gap-6">
 
-      <!-- Session 1 (종료 · 아카이브) -->
-      <div class="series-card relative" data-aos="zoom-in" data-aos-delay="100">
+      <!-- Session 1 (Active) -->
+      <div class="series-card active" data-aos="zoom-in" data-aos-delay="100">
         <div class="p-6">
           <div class="flex items-center justify-between mb-4">
-            <span class="badge badge-navy">1차 · 4월</span>
-            <span class="text-xs font-semibold uppercase tracking-wider" style="color:var(--text-muted);">종료</span>
+            <span class="badge badge-active">1차 · 4월</span>
+            <span class="text-xs font-semibold uppercase tracking-wider" style="color:var(--teal);">현재 회차</span>
           </div>
-          <h3 class="text-base font-bold text-white leading-snug mb-3">로컬 창업과 초기투자 · AC/VC의 새로운 기회와 정책적 과제</h3>
+          <h3 class="text-base font-bold text-white leading-snug mb-3">로컬 창업과 초기투자 — AC/VC의 새로운 기회와 정책적 과제</h3>
           <p class="text-sm" style="color:var(--text-muted);">장현석 · 임효묵 · 권혁태 발제 + 패널 토론</p>
           <div class="mt-5">
-            <a href="session1/" class="cta-btn-outline text-xs px-4 py-2.5">지난 세미나 보기</a>
+            <a href="https://forms.gle/YdKQ49e2GsW5JwTz5" target="_blank" rel="noopener noreferrer" class="cta-btn-outline text-xs px-4 py-2.5">신청하기</a>
           </div>
         </div>
       </div>
 
-      <!-- Session 2 (현재 회차) -->
-      <div class="series-card active" data-aos="zoom-in" data-aos-delay="200">
+      <!-- Session 2 (Coming Soon) -->
+      <div class="series-card relative" data-aos="zoom-in" data-aos-delay="200">
         <div class="p-6">
           <div class="flex items-center justify-between mb-4">
-            <span class="badge badge-active">2차 · 7월</span>
-            <span class="text-xs font-semibold uppercase tracking-wider" style="color:var(--teal);">현재 회차</span>
+            <span class="badge badge-navy">2차 · 7월</span>
           </div>
-          <h3 class="text-base font-bold text-white leading-snug mb-3">액셀러레이터의 생존방식 · 지속가능한 비즈니스 모델을 찾아서</h3>
-          <p class="text-sm" style="color:var(--text-muted);">공성현 · 성창수 발제 + 패널 토론</p>
-          <div class="mt-5">
-            <a href="https://forms.gle/mX3dzeByizxCS84A7" target="_blank" rel="noopener noreferrer" class="cta-btn-outline text-xs px-4 py-2.5">신청하기</a>
-          </div>
+          <h3 class="text-base font-bold text-white leading-snug mb-3">AI 시대의 초기투자 — 생성형 AI 규제 동향과 AC/VC의 투자 전략</h3>
+          <p class="text-sm" style="color:var(--text-muted);">연사 및 상세 내용 추후 공개</p>
+        </div>
+        <div class="coming-soon-overlay">
+          <span class="badge badge-navy text-sm py-2 px-5 font-semibold">Coming Soon</span>
         </div>
       </div>
 
@@ -1110,8 +1097,8 @@
           <div class="flex items-center justify-between mb-4">
             <span class="badge badge-navy">3차 · 10월</span>
           </div>
-          <h3 class="text-base font-bold text-white leading-snug mb-3">초기투자 생태계 네트워킹 시리즈 3차</h3>
-          <p class="text-sm" style="color:var(--text-muted);">주제 및 상세 내용 추후 공개</p>
+          <h3 class="text-base font-bold text-white leading-snug mb-3">벤처투자 회수의 새로운 물결 — STO·세컨더리·M&amp;A 2.0</h3>
+          <p class="text-sm" style="color:var(--text-muted);">연사 및 상세 내용 추후 공개</p>
         </div>
         <div class="coming-soon-overlay">
           <span class="badge badge-navy text-sm py-2 px-5 font-semibold">Coming Soon</span>
@@ -1126,10 +1113,10 @@
 <!-- ════════════════════════════════════════════
      CTA / REGISTER
 ════════════════════════════════════════════ -->
-<section id="register" aria-labelledby="register-title" style="background: linear-gradient(135deg, #0b1f16 0%, #103527 40%, #0a2018 70%, #0b1a14 100%); position: relative; overflow: hidden;">
+<section id="register" aria-labelledby="register-title" style="background: linear-gradient(135deg, #0d1929 0%, #182B52 40%, #0a2020 70%, #0a0a0a 100%); position: relative; overflow: hidden;">
   <!-- Decorative blob -->
-  <div style="position:absolute; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(31,122,92,0.12) 0%, transparent 70%); top:-200px; right:-200px; pointer-events:none;"></div>
-  <div style="position:absolute; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle, rgba(31,122,92,0.08) 0%, transparent 70%); bottom:-100px; left:-100px; pointer-events:none;"></div>
+  <div style="position:absolute; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(40,173,173,0.12) 0%, transparent 70%); top:-200px; right:-200px; pointer-events:none;"></div>
+  <div style="position:absolute; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle, rgba(40,173,173,0.08) 0%, transparent 70%); bottom:-100px; left:-100px; pointer-events:none;"></div>
 
   <div class="section relative z-10">
     <div class="max-w-6xl mx-auto px-6 text-center">
@@ -1139,7 +1126,7 @@
         <h2 id="register-title" class="section-title text-white mb-4">지금 바로 사전 신청하세요</h2>
         <div class="teal-divider mx-auto mt-4 mb-6"></div>
         <p class="text-lg mb-3" style="color:var(--text-secondary);">정원 <strong class="text-white">50명</strong> 한정 · 선착순 마감</p>
-        <p class="text-base mb-10" style="color:var(--text-muted);">2026년 7월 27일(월), 서울창업허브 엠플러스 지하 1층 커뮤니티홀(마곡)에서 뵙겠습니다.</p>
+        <p class="text-base mb-10" style="color:var(--text-muted);">2026년 4월 30일(목), 서울창업허브 엠플러스 지하 1층 커뮤니티홀(마곡)에서 뵙겠습니다.</p>
       </div>
 
       <!-- Target audience tags -->
@@ -1152,7 +1139,7 @@
 
       <!-- CTA Button -->
       <div data-aos="zoom-in" data-aos-delay="150">
-        <a href="https://forms.gle/mX3dzeByizxCS84A7" target="_blank" rel="noopener noreferrer" class="cta-btn text-lg py-5 px-10 inline-flex">
+        <a href="https://forms.gle/YdKQ49e2GsW5JwTz5" target="_blank" rel="noopener noreferrer" class="cta-btn text-lg py-5 px-10 inline-flex">
           신청 바로가기
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -1160,7 +1147,7 @@
         </a>
       </div>
 
-      <p class="text-xs mt-6" style="color:var(--text-muted);">* 신청 완료 후 참가 확정 안내 메일이 발송됩니다. 정원 초과 시 신청이 조기 마감될 수 있습니다.</p>
+      <p class="text-xs mt-6" style="color:var(--text-muted);">* 신청 완료 후 확인 안내 메일이 발송됩니다. 장소 및 참가 안내는 추후 별도 공지됩니다.</p>
 
     </div>
   </div>
@@ -1170,7 +1157,7 @@
 <!-- ════════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════════ -->
-<footer style="background:#06120d; border-top: 1px solid rgba(255,255,255,0.06);" role="contentinfo">
+<footer style="background:#060a10; border-top: 1px solid rgba(255,255,255,0.06);" role="contentinfo">
   <div class="max-w-6xl mx-auto px-6 py-12">
     <div class="grid md:grid-cols-3 gap-8 mb-8">
 
@@ -1183,13 +1170,12 @@
 
       <!-- Event info -->
       <div>
-        <h3 class="text-sm font-bold text-white mb-3">제2회 초기투자 정책 세미나</h3>
+        <h3 class="text-sm font-bold text-white mb-3">제1회 초기투자 정책 세미나</h3>
         <ul class="space-y-1.5 text-sm" style="color:var(--text-muted);">
-          <li>일시: 2026년 7월 27일(월)</li>
-          <li>시간: 16:00 ~ 18:00</li>
+          <li>일시: 2026년 4월 30일(목)</li>
+          <li>시간: 16:00 ~ 17:30</li>
           <li>장소: 서울창업허브 엠플러스 지하 1층 커뮤니티홀 (마곡)</li>
           <li>정원: 50명 (선착순)</li>
-          <li>주최: KAIA · 서울창업허브 엠플러스</li>
         </ul>
       </div>
 
@@ -1201,7 +1187,7 @@
           <li><a href="#speakers" class="hover:text-white transition-colors">연사 소개</a></li>
           <li><a href="#program" class="hover:text-white transition-colors">프로그램</a></li>
           <li><a href="#series" class="hover:text-white transition-colors">2026 세미나 시리즈</a></li>
-          <li><a href="https://forms.gle/mX3dzeByizxCS84A7" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">사전 신청</a></li>
+          <li><a href="https://forms.gle/YdKQ49e2GsW5JwTz5" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">사전 신청</a></li>
         </ul>
       </div>
 
@@ -1310,7 +1296,7 @@
       const link = document.querySelector(`#navbar a[href="#${id}"]`);
       if (link) {
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-          link.style.color = '#1f7a5c';
+          link.style.color = '#28ADAD';
         } else {
           link.style.color = '';
         }
