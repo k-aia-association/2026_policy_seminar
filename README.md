@@ -5,18 +5,22 @@
 ## 세미나 개요
 
 - **주최**: 초기투자액셀러레이터협회
-- **일정**: 2026년 총 3회 (4월, 7월, 10월)
+- **일정**: 2026년 총 3회 (4월, 7월, 11월)
 - **대상**: AC·VC·CVC 종사자, 창업 유관기관, 정책기관, 스타트업 종사자
 
 | 회차 | 시기 | 주제 |
 |:---:|:---:|:---|
-| 1차 | 4월 | 로컬 창업과 초기투자 — AC/VC의 새로운 기회와 정책적 과제 |
-| 2차 | 7월 | AI 시대의 초기투자 — 생성형 AI 규제 동향과 AC/VC의 투자 전략 |
-| 3차 | 10월 | 벤처투자 회수의 새로운 물결 — STO·세컨더리·M&A 2.0 |
+| 1차 | 4월 30일 | 로컬 창업과 초기투자 — AC/VC의 새로운 기회와 정책적 과제 ([아카이브](session1/)) |
+| 2차 | 7월 27일 | 액셀러레이터의 생존방식 — 지속가능한 비즈니스 모델을 찾아서 ([아카이브](session2/)) |
+| 3차 | 11월 10일 | 하이퍼로컬을 위한 새로운 자본 방식 (현재 회차, 메인 페이지) |
 
 ## 웹사이트
 
-https://k-aia-association.github.io/2026_policy_seminar/
+- 메인(제3회): https://k-aia-association.github.io/2026_policy_seminar/
+- 제2회 아카이브: https://k-aia-association.github.io/2026_policy_seminar/session2/
+- 제1회 아카이브: https://k-aia-association.github.io/2026_policy_seminar/session1/
+
+제3회 사전 신청 폼이 열리면 `index.html` 하단 스크립트의 `REGISTER_FORM_URL` 상수에 주소를 넣으면 모든 신청 버튼이 활성화됩니다.
 
 ## 기술 스택
 
