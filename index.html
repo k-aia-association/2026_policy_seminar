@@ -7,10 +7,12 @@
   <meta name="description" content="초기투자액셀러레이터협회와 서울창업허브 엠플러스가 공동 주관하는 제3회 초기투자 정책 세미나. '하이퍼로컬을 위한 새로운 자본 방식'. 2026년 11월 10일(화) 서울창업허브 엠플러스." />
   <meta property="og:title" content="제3회 초기투자 정책 세미나 | 하이퍼로컬을 위한 새로운 자본 방식" />
   <meta property="og:description" content="프로젝트 투자 · 매출 연계 투자 · 지역 출자, 로컬 기업에 맞는 투자 수단과 재원을 논의하는 세미나 (2026.11.10)" />
-  <meta property="og:image" content="https://k-aia-association.github.io/2026_policy_seminar/images/og-image.png" />
+  <meta property="og:image" content="https://k-aia-association.github.io/2026_policy_seminar/images/og-image-3.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ko_KR" />
-  <meta name="theme-color" content="#1a0f24" />
+  <meta name="theme-color" content="#160e24" />
 
   <!-- Pretendard Font -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
@@ -19,8 +21,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <!-- Spline 3D Viewer -->
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.70/build/spline-viewer.js"></script>
+  <!-- Hero visual LCP -->
+  <link rel="preload" as="image" href="images/ring_back.webp" fetchpriority="high" />
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -29,9 +31,9 @@
       theme: {
         extend: {
           colors: {
-            teal: { DEFAULT: '#a78bfa', dark: '#7c3aed', light: '#c4b5fd' },
-            navy: { DEFAULT: '#2d1640', dark: '#1f0f2e', light: '#4c2470' },
-            gold: { DEFAULT: '#f59e0b', dark: '#d97706', light: '#fbbf24' },
+            teal: { DEFAULT: '#a98bff', dark: '#6d3fe0', light: '#c9b6ff' },
+            navy: { DEFAULT: '#2a1d44', dark: '#160e24', light: '#3a2a5c' },
+            gold: { DEFAULT: '#ffc58a', dark: '#ffc58a', light: '#ffc58a' },
           },
           fontFamily: {
             sans: ['Pretendard', 'Inter', 'system-ui', 'sans-serif'],
@@ -43,16 +45,19 @@
 
   <style>
     :root {
-      --teal: #a78bfa;
-      --violet: #8b5cf6;
-      --gold: #fbbf24;
-      --amber: #f59e0b;
-      --navy: #2d1640;
-      --bg: #1a0f24;
-      --bg2: #241333;
-      --text: #f9fafb;
-      --text-muted: #aca3bd;
-      --text-secondary: #e5e7eb;
+      --teal: #a98bff;        /* 보라 포인트 (라벨·아이콘·eyebrow) */
+      --violet: #8b5cf6;      /* 채움 포인트 (타임라인·스크롤바) */
+      --violet-em: #b598ff;   /* 제목 강조·보조 버튼 */
+      --chip-bg: #2a1d44;
+      --chip-text: #c9b6ff;
+      --gold: #ffc58a;        /* 앰버: 날짜 등 작은 포인트 전용 */
+      --navy: #2a1d44;
+      --bg: #160e24;
+      --bg2: #1d1330;
+      --text: #ece8f5;
+      --text-muted: #bdb3d4;
+      --text-secondary: #ece8f5;
+      --nav-text: #cfc6e4;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -68,7 +73,7 @@
 
     /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #160b1e; }
+    ::-webkit-scrollbar-track { background: #0f0a19; }
     ::-webkit-scrollbar-thumb { background: var(--violet); border-radius: 3px; }
     ::selection { background: rgba(139,92,246,0.45); color: #fff; }
 
@@ -83,7 +88,7 @@
       padding: 1rem 0;
     }
     #navbar.scrolled {
-      background: rgba(26,15,36,0.82);
+      background: rgba(22,14,36,0.82);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       box-shadow: 0 1px 0 rgba(139,92,246,0.15);
@@ -118,11 +123,6 @@
       70%  { transform: scale(1); box-shadow: 0 0 0 14px rgba(139,92,246,0); }
       100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(139,92,246,0); }
     }
-    @keyframes pulse-ring-amber {
-      0%   { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(245,158,11,0.5); }
-      70%  { transform: scale(1); box-shadow: 0 0 0 14px rgba(245,158,11,0); }
-      100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(245,158,11,0); }
-    }
     @keyframes shimmer {
       0%   { background-position: -200% center; }
       100% { background-position: 200% center; }
@@ -134,14 +134,12 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: #1a0f24;
+      background: #160e24;
     }
     .aurora-bg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #1a0f24 0%, #2d1640 40%, #3a1a52 60%, #1a0f24 100%);
-      background-size: 300% 300%;
-      animation: auroraShift 12s ease infinite;
+      background: radial-gradient(60% 70% at 72% 48%, #2a1a45 0%, #160e24 55%, #0f0a19 100%);
     }
     .aurora-blob {
       position: absolute;
@@ -157,7 +155,7 @@
     }
     .blob-2 {
       width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(45,22,64,0.8) 0%, rgba(139,92,246,0.2) 50%, transparent 70%);
+      background: radial-gradient(circle, rgba(42,26,69,0.8) 0%, rgba(139,92,246,0.2) 50%, transparent 70%);
       bottom: -80px; right: -100px;
       animation: auroraBlob2 18s ease-in-out infinite;
     }
@@ -211,7 +209,7 @@
       position: absolute;
       inset: -3px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #8b5cf6, #2d1640);
+      background: linear-gradient(135deg, #8b5cf6, #2a1a45);
       z-index: -1;
     }
 
@@ -314,7 +312,7 @@
     .coming-soon-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(26,15,36,0.65);
+      background: rgba(22,14,36,0.65);
       backdrop-filter: blur(2px);
       display: flex;
       align-items: center;
@@ -327,8 +325,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: linear-gradient(135deg, #fcd34d 0%, #fbbf24 45%, #f59e0b 100%);
-      color: #1a0f24;
+      background: linear-gradient(135deg, #8b5cf6, #6d3fe0);
+      color: #fff;
       font-weight: 700;
       padding: 1rem 2.5rem;
       border-radius: 50px;
@@ -336,13 +334,13 @@
       text-decoration: none;
       border: none;
       cursor: pointer;
-      animation: pulse-ring-amber 2.5s cubic-bezier(0.66, 0, 0, 1) infinite;
+      animation: pulse-ring 2.5s cubic-bezier(0.66, 0, 0, 1) infinite;
       transition: transform 0.2s, box-shadow 0.2s;
       font-family: inherit;
     }
     .cta-btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 10px 40px rgba(245,158,11,0.45);
+      box-shadow: 0 10px 40px rgba(139,92,246,0.5);
       animation: none;
     }
     .cta-btn-outline {
@@ -350,27 +348,30 @@
       align-items: center;
       gap: 0.5rem;
       background: transparent;
-      color: var(--teal);
+      color: var(--violet-em);
       font-weight: 600;
       padding: 0.875rem 2rem;
       border-radius: 50px;
       font-size: 1rem;
       text-decoration: none;
-      border: 1.5px solid var(--teal);
+      border: 1.5px solid #6d4fc0;
       cursor: pointer;
       transition: background 0.2s, color 0.2s, transform 0.2s;
       font-family: inherit;
     }
     .cta-btn-outline:hover {
-      background: var(--teal);
-      color: #1a0f24;
+      background: #6d4fc0;
+      color: #fff;
       transform: scale(1.03);
     }
 
     /* 신청 오픈 전 비활성 버튼 (디자인 유지, 클릭 불가) */
     .js-register[aria-disabled="true"] { cursor: default; }
-    .cta-btn.js-register[aria-disabled="true"]:hover { transform: none; box-shadow: none; animation: pulse-ring-amber 2.5s cubic-bezier(0.66, 0, 0, 1) infinite; }
-    .cta-btn-outline.js-register[aria-disabled="true"]:hover { background: transparent; color: var(--teal); transform: none; }
+    .cta-btn.js-register[aria-disabled="true"]:hover { transform: none; box-shadow: none; animation: pulse-ring 2.5s cubic-bezier(0.66, 0, 0, 1) infinite; }
+    .cta-btn-outline.js-register[aria-disabled="true"]:hover { background: transparent; color: var(--violet-em); transform: none; }
+    /* 헤더 「사전 신청」 */
+    .nav-cta { border-color: #9b7bff; color: #c9b6ff; }
+    .nav-cta:hover { background: #9b7bff; color: #160e24; }
 
     /* ── Badge ── */
     .badge {
@@ -383,25 +384,30 @@
       letter-spacing: 0.03em;
     }
     .badge-teal {
-      background: rgba(139,92,246,0.15);
-      color: var(--teal);
+      background: var(--chip-bg);
+      color: var(--chip-text);
       border: 1px solid rgba(139,92,246,0.35);
     }
     .badge-navy {
-      background: rgba(245,158,11,0.12);
-      color: #fbbf24;
-      border: 1px solid rgba(245,158,11,0.35);
+      background: var(--chip-bg);
+      color: var(--chip-text);
+      border: 1px solid rgba(155,123,255,0.25);
+    }
+    .badge-date {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid transparent;
     }
     .badge-active {
-      background: rgba(139,92,246,0.2);
-      color: #c4b5fd;
+      background: var(--chip-bg);
+      color: var(--chip-text);
       border: 1px solid rgba(139,92,246,0.5);
       animation: pulse-ring 3s ease-in-out infinite;
     }
 
     /* ── Section ── */
     .section { padding: 6rem 0; }
-    .section-alt { background: #160b1e; }
+    .section-alt { background: #130c1f; }
     .section-title {
       font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 800;
@@ -409,7 +415,7 @@
     }
     .teal-text { color: var(--teal); }
     .gradient-text {
-      background: linear-gradient(135deg, #a78bfa 0%, #fcd34d 50%, #a78bfa 100%);
+      background: linear-gradient(135deg, #b598ff 0%, #ddd0ff 50%, #b598ff 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -431,7 +437,7 @@
       position: fixed;
       inset: 0;
       z-index: 99;
-      background: rgba(26,15,36,0.97);
+      background: rgba(22,14,36,0.97);
       backdrop-filter: blur(20px);
       flex-direction: column;
       align-items: center;
@@ -453,6 +459,34 @@
       flex-shrink: 0;
     }
 
+
+    /* ── Hero ring visual (layered WebP, idle float + pointer parallax) ── */
+    .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; height: 640px; margin-top: -40px; pointer-events: none; }
+    .crystal-ring { position: relative; width: 640px; height: 640px; flex-shrink: 0; perspective: 1200px; }
+    .crystal-ring .tilt { position: absolute; inset: 0; transform-style: preserve-3d;
+      transform: rotateX(calc(var(--my,0) * -6deg)) rotateY(calc(var(--mx,0) * 8deg)); }
+    .crystal-ring .glow { position: absolute; inset: 18%; border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(139,92,246,.35), rgba(139,92,246,0));
+      animation: ringPulse 7s ease-in-out infinite; }
+    @keyframes ringPulse { 50% { opacity: .45; transform: scale(1.06); } }
+    .crystal-ring .layer { position: absolute; inset: 0; width: 100%; height: 100%;
+      translate: calc(var(--mx,0) * var(--d)) calc(var(--my,0) * var(--d)); }
+    .crystal-ring .back   { --d: 6px;  animation: ringBob 8s ease-in-out infinite; }
+    .crystal-ring .front  { --d: 16px; animation: ringBob 6.5s ease-in-out infinite -2s; }
+    .crystal-ring .shards { --d: 30px; animation: ringDrift 5.5s ease-in-out infinite -1s; }
+    @keyframes ringBob { 50% { transform: translateY(-9px) rotate(.6deg); } }
+    @keyframes ringDrift {
+      33% { transform: translate(-6px,-16px) rotate(-1.5deg); }
+      66% { transform: translate(5px,-7px) rotate(1deg); } }
+    @media (max-width: 767px) {
+      .hero-visual { height: auto; margin-top: 0; }
+      .crystal-ring { width: min(80vw, 640px); height: auto; aspect-ratio: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-visual * { animation: none !important; }
+      .crystal-ring .tilt, .crystal-ring .layer { transform: none; translate: none; }
+    }
+
     /* ── Responsive tweaks ── */
     @media (max-width: 640px) {
       .section { padding: 4rem 0; }
@@ -469,18 +503,18 @@
   <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
     <!-- Logo -->
     <a href="#hero" class="flex flex-col leading-tight">
-      <span class="text-[10px] font-medium tracking-wider uppercase leading-tight" style="color:var(--teal);">Korea startup Accelerator and<br />early stage Investors Association</span>
+      <span class="text-[10px] font-medium tracking-wider uppercase leading-tight" style="color:#b39dff;">Korea startup Accelerator and<br />early stage Investors Association</span>
       <span class="text-base font-bold text-white mt-0.5">초기투자액셀러레이터협회</span>
     </a>
 
     <!-- Desktop Nav -->
-    <div class="hidden md:flex items-center gap-7 text-sm font-medium" style="color:var(--text-muted);">
+    <div class="hidden md:flex items-center gap-7 text-sm font-medium" style="color:var(--nav-text);">
       <a href="#about"    class="hover:text-white transition-colors">세미나 소개</a>
       <a href="#speakers" class="hover:text-white transition-colors">연사</a>
       <a href="#program"  class="hover:text-white transition-colors">프로그램</a>
       <a href="#panel"    class="hover:text-white transition-colors">패널 토론</a>
       <a href="#series"   class="hover:text-white transition-colors">시리즈</a>
-      <a href="#register" class="cta-btn-outline text-xs px-5 py-2.5" style="animation:none;">사전 신청</a>
+      <a href="#register" class="cta-btn-outline nav-cta text-xs px-5 py-2.5" style="animation:none;">사전 신청</a>
     </div>
 
     <!-- Hamburger -->
@@ -521,15 +555,15 @@
         <!-- Badges -->
         <div class="flex flex-wrap gap-2 mb-6">
           <span class="badge badge-active">
-            <span class="inline-block w-1.5 h-1.5 rounded-full bg-teal-300 mr-1.5" style="background:#fbbf24;"></span>
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-teal-300 mr-1.5" style="background:#c9b6ff;"></span>
             제3회
           </span>
           <span class="badge badge-teal">50석 한정</span>
-          <span class="badge badge-navy">2026년 11월 10일</span>
+          <span class="badge badge-date">2026년 11월 10일</span>
         </div>
 
         <!-- Label -->
-        <p class="text-sm font-semibold tracking-widest uppercase mb-3" style="color:#c4b5fd;">
+        <p class="text-sm font-semibold tracking-widest uppercase mb-3" style="color:#a98bff;">
           초기투자액셀러레이터협회 · 서울창업허브 엠플러스 공동 주관
         </p>
 
@@ -588,16 +622,16 @@
         </div>
       </div>
 
-      <!-- 우측: Spline 3D (데스크톱만 표시) -->
-      <div class="hidden md:block relative" style="min-height: 600px;">
-        <iframe
-          id="spline-hero"
-          src="https://my.spline.design/clonercubesimplecopy-OsoCkuJlh3GBJZnEGyN0PtGO/"
-          frameborder="0"
-          loading="lazy"
-          title="3D 비주얼"
-          style="width: 100%; height: 600px; border: none; pointer-events: none;"
-        ></iframe>
+      <!-- 우측: 크리스탈 링 (레이어 3장 + 글로우, 데스크톱은 포인터 패럴랙스) -->
+      <div class="hero-visual">
+        <div class="crystal-ring" role="img" aria-label="크리스탈 링 비주얼">
+          <div class="tilt">
+            <div class="glow"></div>
+            <img class="layer back" src="images/ring_back.webp" alt="" width="1600" height="1600" loading="eager" fetchpriority="high" decoding="async" />
+            <img class="layer front" src="images/ring_front.webp" alt="" width="1600" height="1600" loading="eager" decoding="async" />
+            <img class="layer shards" src="images/ring_shards.webp" alt="" width="1600" height="1600" loading="eager" decoding="async" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -695,7 +729,7 @@
 
     <!-- 발제 라벨 -->
     <div class="flex flex-wrap items-center gap-3 mb-8" data-aos="fade-up" data-aos-delay="50">
-      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold border" style="background: rgba(139,92,246,0.1); border-color: #8b5cf6; color: #a78bfa;">
+      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold border" style="background: rgba(139,92,246,0.1); border-color: #8b5cf6; color: #a98bff;">
         <span class="w-2 h-2 rounded-full bg-teal inline-block animate-pulse"></span>
         제3회 발제
       </span>
@@ -708,7 +742,7 @@
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="100">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160b1e; background:linear-gradient(135deg,#8b5cf6,#c4b5fd);" aria-hidden="true">K</div>
+            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160e24; background:linear-gradient(135deg,#8b5cf6,#c9b6ff);" aria-hidden="true">K</div>
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="badge badge-teal">발제 1 · 현실</span>
@@ -750,7 +784,7 @@
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="200">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160b1e; background:linear-gradient(135deg,#8b5cf6,#c4b5fd);" aria-hidden="true">이</div>
+            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160e24; background:linear-gradient(135deg,#8b5cf6,#c9b6ff);" aria-hidden="true">이</div>
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="badge badge-teal">발제 2 · 수단</span>
@@ -792,7 +826,7 @@
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="300">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160b1e; background:linear-gradient(135deg,#8b5cf6,#c4b5fd);" aria-hidden="true">임</div>
+            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160e24; background:linear-gradient(135deg,#8b5cf6,#c9b6ff);" aria-hidden="true">임</div>
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="badge badge-teal">발제 3 · 수단</span>
@@ -834,13 +868,13 @@
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="400">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#fbbf24; background:rgba(245,158,11,0.08); border:1.5px dashed rgba(251,191,36,0.6);" aria-hidden="true">?</div>
+            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#c9b6ff; background:rgba(139,92,246,0.08); border:1.5px dashed rgba(155,123,255,0.6);" aria-hidden="true">?</div>
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="badge badge-teal">발제 4 · 재원</span>
               </div>
               <h3 class="text-xl font-bold text-white">TBD</h3>
-              <p class="text-sm font-medium mt-0.5" style="color:#fbbf24;">연사 섭외 중</p>
+              <p class="text-sm font-medium mt-0.5" style="color:#c9b6ff;">연사 섭외 중</p>
             </div>
           </div>
 
@@ -855,13 +889,13 @@
       <article class="speaker-card sm:col-span-2 sm:max-w-md sm:mx-auto w-full" data-aos="fade-up" data-aos-delay="500">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#fbbf24; background:rgba(245,158,11,0.08); border:1.5px dashed rgba(251,191,36,0.6);" aria-hidden="true">?</div>
+            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#c9b6ff; background:rgba(139,92,246,0.08); border:1.5px dashed rgba(155,123,255,0.6);" aria-hidden="true">?</div>
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="badge badge-teal">발제 5 · 재원</span>
               </div>
               <h3 class="text-xl font-bold text-white">TBD</h3>
-              <p class="text-sm font-medium mt-0.5" style="color:#fbbf24;">연사 섭외 중</p>
+              <p class="text-sm font-medium mt-0.5" style="color:#c9b6ff;">연사 섭외 중</p>
             </div>
           </div>
 
@@ -1143,7 +1177,7 @@
 <!-- ════════════════════════════════════════════
      CTA / REGISTER
 ════════════════════════════════════════════ -->
-<section id="register" aria-labelledby="register-title" style="background: linear-gradient(135deg, #1f1030 0%, #2d1640 40%, #1c0e2a 70%, #1a0f24 100%); position: relative; overflow: hidden;">
+<section id="register" aria-labelledby="register-title" style="background: linear-gradient(135deg, #1d1330 0%, #2a1a45 40%, #1a1129 70%, #160e24 100%); position: relative; overflow: hidden;">
   <!-- Decorative blob -->
   <div style="position:absolute; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%); top:-200px; right:-200px; pointer-events:none;"></div>
   <div style="position:absolute; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%); bottom:-100px; left:-100px; pointer-events:none;"></div>
@@ -1187,7 +1221,7 @@
 <!-- ════════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════════ -->
-<footer style="background:#100818; border-top: 1px solid rgba(255,255,255,0.06);" role="contentinfo">
+<footer style="background:#0f0a19; border-top: 1px solid rgba(255,255,255,0.06);" role="contentinfo">
   <div class="max-w-6xl mx-auto px-6 py-12">
     <div class="grid md:grid-cols-3 gap-8 mb-8">
 
@@ -1346,7 +1380,7 @@
       const link = document.querySelector(`#navbar a[href="#${id}"]`);
       if (link) {
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-          link.style.color = '#a78bfa';
+          link.style.color = '#b598ff';
         } else {
           link.style.color = '';
         }
@@ -1357,5 +1391,26 @@
   window.addEventListener('scroll', updateActiveLink, { passive: true });
 </script>
 
+<script>
+  // 크리스탈 링 포인터 패럴랙스: 포인터 위치(-1..1)를 따라 천천히 기울고, 벗어나면 제자리로
+  (function () {
+    const ring = document.querySelector('.crystal-ring');
+    if (!ring) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return; // 모바일: 유휴 모션·글로우만
+    let tx = 0, ty = 0, cx = 0, cy = 0;
+    addEventListener('pointermove', e => {
+      tx = (e.clientX / innerWidth) * 2 - 1;
+      ty = (e.clientY / innerHeight) * 2 - 1;
+    });
+    document.addEventListener('pointerleave', () => { tx = ty = 0; });
+    (function tick() {
+      cx += (tx - cx) * 0.06; cy += (ty - cy) * 0.06;
+      ring.style.setProperty('--mx', cx.toFixed(4));
+      ring.style.setProperty('--my', cy.toFixed(4));
+      requestAnimationFrame(tick);
+    })();
+  })();
+</script>
 </body>
 </html>
