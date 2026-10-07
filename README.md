@@ -20,7 +20,7 @@
 - 제2회 아카이브: https://k-aia-association.github.io/2026_policy_seminar/session2/
 - 제1회 아카이브: https://k-aia-association.github.io/2026_policy_seminar/session1/
 
-제3회 사전 신청 폼이 열리면 `index.html` 하단 스크립트의 `REGISTER_FORM_URL` 상수에 주소를 넣으면 모든 신청 버튼이 활성화됩니다.
+제3회 사전 신청 폼: https://forms.gle/pNzV9Sen6ghBBE5W9 (2026-10-07 연결). 주소는 `index.html` 하단 스크립트의 `REGISTER_FORM_URL` 상수와 신청 버튼 3곳(hero·시리즈 3차 카드·사전 신청 섹션)의 href에 들어 있습니다.
 
 ## 기술 스택
 

@@ -617,8 +617,8 @@
 
         <!-- CTA (신청 폼 URL은 하단 스크립트의 REGISTER_FORM_URL 한 곳에서 관리) -->
         <div class="flex flex-wrap gap-3">
-          <a class="cta-btn js-register" data-open-label="신청하기" aria-disabled="true">
-            <span class="js-register-label">신청 오픈 예정</span>
+          <a href="https://forms.gle/pNzV9Sen6ghBBE5W9" target="_blank" rel="noopener noreferrer" class="cta-btn js-register" data-open-label="신청하기">
+            <span class="js-register-label">신청하기</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
@@ -1171,7 +1171,7 @@
           <h3 class="text-base font-bold text-white leading-snug mb-3">하이퍼로컬 시대, 초기 창업 투자의 새로운 자본 운용 방식 · 로컬 기업에 맞는 투자 수단과 재원</h3>
           <p class="text-sm" style="color:var(--text-muted);">발제 5건 + 패널 토론 &amp; Q&amp;A</p>
           <div class="mt-5">
-            <a class="cta-btn-outline text-xs px-4 py-2.5 js-register" data-open-label="신청하기" aria-disabled="true"><span class="js-register-label">신청 오픈 예정</span></a>
+            <a href="https://forms.gle/pNzV9Sen6ghBBE5W9" target="_blank" rel="noopener noreferrer" class="cta-btn-outline text-xs px-4 py-2.5 js-register" data-open-label="신청하기"><span class="js-register-label">신청하기</span></a>
           </div>
         </div>
       </div>
@@ -1210,15 +1210,15 @@
 
       <!-- CTA Button -->
       <div data-aos="zoom-in" data-aos-delay="150">
-        <a class="cta-btn text-lg py-5 px-10 inline-flex js-register" data-open-label="신청 바로가기" aria-disabled="true">
-          <span class="js-register-label">신청 오픈 예정</span>
+        <a href="https://forms.gle/pNzV9Sen6ghBBE5W9" target="_blank" rel="noopener noreferrer" class="cta-btn text-lg py-5 px-10 inline-flex js-register" data-open-label="신청 바로가기">
+          <span class="js-register-label">신청 바로가기</span>
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
       </div>
 
-      <p class="text-xs mt-6 js-register-note" style="color:var(--text-muted);">* 신청 페이지는 곧 열립니다. 신청 완료 후 참가 확정 안내 메일이 발송되며, 정원 초과 시 신청이 조기 마감될 수 있습니다.</p>
+      <p class="text-xs mt-6 js-register-note" style="color:var(--text-muted);">* 신청 완료 후 참가 확정 안내 메일이 발송됩니다. 정원 초과 시 신청이 조기 마감될 수 있습니다.</p>
 
     </div>
   </div>
@@ -1278,8 +1278,8 @@
 <script>
   // ── 사전 신청 폼 URL ──
   // 제3회 신청 폼이 열리면 아래 한 줄에 Google Form 주소만 넣으면 모든 신청 버튼이 링크로 바뀝니다.
-  // 비워 두면 버튼은 "신청 오픈 예정"으로 표시되고 클릭되지 않습니다.
-  const REGISTER_FORM_URL = '';
+  // 비워 두면 버튼이 비활성(클릭 불가) 상태가 됩니다. 마감 시 ''로 바꾸고 버튼 문구·href도 함께 정리하세요.
+  const REGISTER_FORM_URL = 'https://forms.gle/pNzV9Sen6ghBBE5W9';
 
   if (REGISTER_FORM_URL) {
     document.querySelectorAll('.js-register').forEach(el => {
