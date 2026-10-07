@@ -452,6 +452,17 @@
     }
     #mobile-menu.open { display: flex; }
 
+
+    /* ── 참여 혜택 ── */
+    .benefit-card { height: 100%; }
+    #benefits { word-break: keep-all; }
+    .benefit-icon { width: 36px; height: 36px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center;
+      background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.25); flex-shrink: 0; }
+    .benefit-plus { border-color: rgba(139,92,246,0.55);
+      background: linear-gradient(160deg, rgba(139,92,246,0.16) 0%, rgba(255,255,255,0.04) 60%);
+      box-shadow: 0 0 30px rgba(139,92,246,0.15); }
+    .benefit-plus-badge { background: linear-gradient(135deg, #8b5cf6, #6d3fe0); color: #fff; border: 1px solid transparent; }
+
     /* ── Icon circles (about) ── */
     .icon-circle {
       width: 56px; height: 56px;
@@ -617,8 +628,8 @@
 
         <!-- CTA (신청 폼 URL은 하단 스크립트의 REGISTER_FORM_URL 한 곳에서 관리) -->
         <div class="flex flex-wrap gap-3">
-          <a href="https://forms.gle/pNzV9Sen6ghBBE5W9" target="_blank" rel="noopener noreferrer" class="cta-btn js-register" data-open-label="신청하기">
-            <span class="js-register-label">신청하기</span>
+          <a href="https://forms.gle/pNzV9Sen6ghBBE5W9" target="_blank" rel="noopener noreferrer" class="cta-btn js-register" data-open-label="사전 신청하기">
+            <span class="js-register-label">사전 신청하기</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
@@ -716,6 +727,61 @@
             <p class="text-sm" style="color:var(--text-muted);">풀뿌리 정책금융, 승계형 M&amp;A 펀드, 지자체 출자까지 로컬 투자를 받칠 재원의 통로를 논의합니다.</p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- 참여 혜택 -->
+    <div id="benefits" class="mt-20" aria-labelledby="benefits-title">
+      <div class="text-center mb-10" data-aos="fade-up">
+        <p class="text-sm font-semibold tracking-widest uppercase mb-2" style="color:var(--teal);">Benefits</p>
+        <h3 id="benefits-title" class="text-2xl md:text-3xl font-extrabold text-white">참여 혜택</h3>
+        <p class="mt-3 text-base" style="color:var(--text-muted);">사전 신청자와 세미나 현장 참석자에게 세미나 자료를 드립니다.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- A: 사전 신청자 -->
+        <div class="benefit-card glass-card p-7" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="badge badge-teal">사전 신청자 전원</span>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">사전 신청자 혜택</h4>
+          <p class="text-sm mb-5" style="color:var(--text-muted);">사전 신청자 전원에게 「하이퍼로컬 사례집」을 공유합니다.</p>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-center gap-3">
+              <span class="benefit-icon" aria-hidden="true">
+                <svg class="w-5 h-5" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+              </span>
+              <span class="font-semibold text-white">하이퍼로컬 사례집</span>
+            </li>
+          </ul>
+        </div>
+        <!-- B: 세미나 참여자 (현장) -->
+        <div class="benefit-card benefit-plus glass-card p-7" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="badge badge-teal">현장 참석자</span>
+            <span class="badge benefit-plus-badge">PLUS</span>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">세미나 참여자 혜택</h4>
+          <p class="text-sm mb-5" style="color:var(--text-muted);">세미나 현장 참석자에게 「하이퍼로컬 사례집」과 「현장 발표자료」를 제공합니다.</p>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-center gap-3">
+              <span class="benefit-icon" aria-hidden="true">
+                <svg class="w-5 h-5" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+              </span>
+              <span class="font-semibold text-white">하이퍼로컬 사례집</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="benefit-icon" aria-hidden="true">
+                <svg class="w-5 h-5" style="color:var(--teal);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>
+              </span>
+              <span class="font-semibold text-white">현장 발표자료</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="250">
+        <a href="https://forms.gle/pNzV9Sen6ghBBE5W9" target="_blank" rel="noopener noreferrer" class="cta-btn-outline js-register" data-open-label="사전 신청하기"><span class="js-register-label">사전 신청하기</span></a>
       </div>
     </div>
   </div>
@@ -871,23 +937,44 @@
         </div>
       </article>
 
-      <!-- Speaker 4: 발제 4 (연사 섭외 중) -->
+      <!-- Speaker 4: 발제 4 (전승범) -->
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="400">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#c9b6ff; background:rgba(139,92,246,0.08); border:1.5px dashed rgba(155,123,255,0.6);" aria-hidden="true">?</div>
+            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160e24; background:linear-gradient(135deg,#8b5cf6,#c9b6ff);" aria-hidden="true">전</div>
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="badge badge-teal">발제 4 · 재원</span>
               </div>
-              <h3 class="text-xl font-bold text-white">TBD</h3>
-              <p class="text-sm font-medium mt-0.5" style="color:#c9b6ff;">연사 섭외 중</p>
+              <h3 class="text-xl font-bold text-white">전승범</h3>
+              <p class="text-sm font-medium mt-0.5" style="color:var(--teal);">한국사회가치연대기금<br />사업개발실장</p>
+            </div>
+          </div>
+
+          <div class="space-y-2.5 mb-5">
+            <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
+              <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              사회연대경제기본법 발효와 풀뿌리 정책금융 통로
+            </div>
+            <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
+              <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              지역 중소기업을 인수하는 승계형 M&amp;A 펀드
+            </div>
+            <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
+              <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              대안 금융의 지역 수요 개발 과제
             </div>
           </div>
 
           <div class="speaker-topic rounded-xl p-3.5" style="background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.2);">
             <p class="text-[10px] font-semibold uppercase tracking-wider mb-1" style="color:var(--teal);">발제 주제</p>
-            <p class="text-xs font-medium text-white leading-snug">지역 금융의 새로운 통로<br />승계형 M&amp;A 펀드와 풀뿌리 정책금융</p>
+            <p class="text-xs font-medium text-white leading-snug">한국사회가치연대기금이 바라보는 지역 금융<br />승계형 M&amp;A 펀드와 풀뿌리 정책금융</p>
           </div>
         </div>
       </article>
@@ -993,18 +1080,18 @@
         </div>
       </div>
 
-      <!-- Item 5: 발제 4 (TBD) -->
+      <!-- Item 5: 발제 4 (전승범) -->
       <div class="timeline-item" data-aos="fade-up" data-aos-delay="270">
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="glass-card p-6 ml-2">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div>
               <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">15:00 ~ 15:20</span>
-              <h3 class="text-lg font-bold text-white mt-1">[발제 4] 지역 금융의 새로운 통로: 승계형 M&amp;A 펀드와 풀뿌리 정책금융</h3>
+              <h3 class="text-lg font-bold text-white mt-1">[발제 4] 한국사회가치연대기금이 바라보는 지역 금융: 승계형 M&amp;A 펀드와 풀뿌리 정책금융</h3>
             </div>
-            <span class="badge badge-teal flex-shrink-0">TBD</span>
+            <span class="badge badge-teal flex-shrink-0">한국사회가치연대기금 전승범</span>
           </div>
-          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 - 지역 주체가 맡는 풀뿌리 정책금융과 지역 중소기업을 인수해 잇는 승계형 M&amp;A 펀드 (연사 섭외 중)</p>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 - 지역 주체가 맡는 풀뿌리 정책금융과 지역 중소기업을 인수해 잇는 승계형 M&amp;A 펀드</p>
         </div>
       </div>
 
@@ -1171,7 +1258,7 @@
           <h3 class="text-base font-bold text-white leading-snug mb-3">하이퍼로컬 시대, 초기 창업 투자의 새로운 자본 운용 방식 · 로컬 기업에 맞는 투자 수단과 재원</h3>
           <p class="text-sm" style="color:var(--text-muted);">발제 5건 + 패널 토론 &amp; Q&amp;A</p>
           <div class="mt-5">
-            <a href="https://forms.gle/pNzV9Sen6ghBBE5W9" target="_blank" rel="noopener noreferrer" class="cta-btn-outline text-xs px-4 py-2.5 js-register" data-open-label="신청하기"><span class="js-register-label">신청하기</span></a>
+            <a href="https://forms.gle/pNzV9Sen6ghBBE5W9" target="_blank" rel="noopener noreferrer" class="cta-btn-outline text-xs px-4 py-2.5 js-register" data-open-label="사전 신청하기"><span class="js-register-label">사전 신청하기</span></a>
           </div>
         </div>
       </div>
@@ -1210,8 +1297,8 @@
 
       <!-- CTA Button -->
       <div data-aos="zoom-in" data-aos-delay="150">
-        <a href="https://forms.gle/pNzV9Sen6ghBBE5W9" target="_blank" rel="noopener noreferrer" class="cta-btn text-lg py-5 px-10 inline-flex js-register" data-open-label="신청 바로가기">
-          <span class="js-register-label">신청 바로가기</span>
+        <a href="https://forms.gle/pNzV9Sen6ghBBE5W9" target="_blank" rel="noopener noreferrer" class="cta-btn text-lg py-5 px-10 inline-flex js-register" data-open-label="사전 신청하기">
+          <span class="js-register-label">사전 신청하기</span>
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
