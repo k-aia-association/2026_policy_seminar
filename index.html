@@ -209,6 +209,8 @@
       flex-shrink: 0;
       position: relative;
     }
+    /* 발제1: 흰 원 안에 KAIA 마크 (가로로 긴 마크라 좌우 여백 12%) */
+    .speaker-avatar-logo img { width: 76%; height: auto; display: block; }
     .speaker-avatar::after {
       content: '';
       position: absolute;
@@ -815,7 +817,7 @@
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="100">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160e24; background:linear-gradient(135deg,#8b5cf6,#c9b6ff);" aria-hidden="true">K</div>
+            <div class="speaker-avatar speaker-avatar-logo flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; background:#fff;"><img src="images/kaia-mark.webp" alt="KAIA 초기투자액셀러레이터협회 로고" width="735" height="177" loading="lazy" decoding="async" /></div>
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="badge badge-teal">발제 1 · 현실</span>
