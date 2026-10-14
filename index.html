@@ -215,6 +215,16 @@
     }
     /* 발제1: 흰 원 안에 KAIA 마크 (가로로 긴 마크라 좌우 여백 12%) */
     .speaker-avatar-logo img { width: 76%; height: auto; display: block; }
+    /* 연사 사진: 원형 크롭 */
+    .speaker-avatar-photo img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; background: #fff; }
+    .panel-people { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-top: 1rem; }
+    .panel-person { display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.35rem 0.9rem 0.35rem 0.35rem; border-radius: 9999px; background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.25); text-align: left; word-break: keep-all; }
+    .panel-person-mod { background: rgba(139,92,246,0.18); border-color: rgba(139,92,246,0.45); }
+    .panel-person img, .panel-person .pp-initial { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: #fff; }
+    .panel-person .pp-initial { display: inline-flex; align-items: center; justify-content: center; font-weight: 800; color: #160e24; background: linear-gradient(135deg,#8b5cf6,#c9b6ff); }
+    .panel-person .pp-role { display: block; font-size: 0.68rem; font-weight: 600; color: var(--teal); line-height: 1.2; }
+    .panel-person .pp-name { display: block; font-size: 0.85rem; font-weight: 700; color: #fff; line-height: 1.3; }
+    .panel-person .pp-org { display: block; font-size: 0.72rem; color: var(--text-muted); line-height: 1.3; }
     .speaker-avatar::after {
       content: '';
       position: absolute;
@@ -733,7 +743,7 @@
           </div>
           <div>
             <h3 class="font-bold text-white text-base mb-1">재원 · 누구의 돈으로</h3>
-            <p class="text-sm" style="color:var(--text-muted);">풀뿌리 정책금융, 승계형 M&amp;A 펀드, 지자체 출자 구조와 공공 출자의 필요성까지 로컬 투자를 받칠 재원의 통로를 논의합니다.</p>
+            <p class="text-sm" style="color:var(--text-muted);">풀뿌리 정책금융과 지역순환경제, 지자체 출자 구조와 공공 출자의 필요성까지 로컬 투자를 받칠 재원의 통로를 논의합니다.</p>
           </div>
         </div>
       </div>
@@ -866,7 +876,7 @@
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="200">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160e24; background:linear-gradient(135deg,#8b5cf6,#c9b6ff);" aria-hidden="true">이</div>
+            <div class="speaker-avatar speaker-avatar-photo flex-shrink-0" style="width:84px; height:84px;"><img src="images/speaker-lee.webp" alt="이순열 큐네스티 대표" width="400" height="400" loading="lazy" decoding="async" /></div>
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="badge badge-teal">발제 2 · 수단</span>
@@ -904,17 +914,17 @@
         </div>
       </article>
 
-      <!-- Speaker 3: 발제 3 (임팩트스퀘어 류인선·조용민 공동발제) -->
+      <!-- Speaker 3: 발제 3 (임팩트스퀘어 조용민) -->
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="300">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160e24; background:linear-gradient(135deg,#8b5cf6,#c9b6ff);" aria-hidden="true">임</div>
+            <div class="speaker-avatar speaker-avatar-photo flex-shrink-0" style="width:84px; height:84px;"><img src="images/speaker-jo.webp" alt="조용민 임팩트스퀘어 투자팀 매니저" width="400" height="400" loading="lazy" decoding="async" /></div>
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="badge badge-teal">발제 3 · 수단</span>
               </div>
-              <h3 class="text-xl font-bold text-white">류인선 · 조용민</h3>
-              <p class="text-sm font-medium mt-0.5" style="color:var(--teal);">임팩트스퀘어<br />로컬부문 실장 · 투자팀 매니저</p>
+              <h3 class="text-xl font-bold text-white">조용민</h3>
+              <p class="text-sm font-medium mt-0.5" style="color:var(--teal);">임팩트스퀘어<br />투자팀 매니저</p>
             </div>
           </div>
 
@@ -950,7 +960,7 @@
       <article class="speaker-card" data-aos="fade-up" data-aos-delay="400">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160e24; background:linear-gradient(135deg,#8b5cf6,#c9b6ff);" aria-hidden="true">전</div>
+            <div class="speaker-avatar speaker-avatar-photo flex-shrink-0" style="width:84px; height:84px;"><img src="images/speaker-jeon.webp" alt="전승범 한국사회가치연대기금 사업개발실장" width="400" height="400" loading="lazy" decoding="async" /></div>
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="badge badge-teal">발제 4 · 재원</span>
@@ -971,7 +981,7 @@
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              지역 중소기업을 인수하는 승계형 M&amp;A 펀드
+              풀뿌리 정책금융을 통한 지역순환경제 제언
             </div>
             <div class="flex items-start gap-2 text-xs" style="color:var(--text-secondary);">
               <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style="color:var(--teal);" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
@@ -983,7 +993,7 @@
 
           <div class="speaker-topic rounded-xl p-3.5" style="background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.2);">
             <p class="text-[10px] font-semibold uppercase tracking-wider mb-1" style="color:var(--teal);">발제 주제</p>
-            <p class="text-xs font-medium text-white leading-snug">한국사회가치연대기금이 바라보는 지역 금융<br />승계형 M&amp;A 펀드와 풀뿌리 정책금융</p>
+            <p class="text-xs font-medium text-white leading-snug">사회연대금융의 풀뿌리 정책금융 및<br />지역순환경제 제언</p>
           </div>
         </div>
       </article>
@@ -992,7 +1002,7 @@
       <article class="speaker-card speaker-card-center" data-aos="fade-up" data-aos-delay="500">
         <div class="p-7">
           <div class="flex items-start gap-4 mb-5">
-            <div class="speaker-avatar flex items-center justify-center flex-shrink-0" style="width:84px; height:84px; font-size:2rem; font-weight:800; color:#160e24; background:linear-gradient(135deg,#8b5cf6,#c9b6ff);" aria-hidden="true">김</div>
+            <div class="speaker-avatar speaker-avatar-photo flex-shrink-0" style="width:84px; height:84px;"><img src="images/speaker-kim.webp" alt="김희정 제주창조경제혁신센터 투자성장본부장" width="400" height="400" loading="lazy" decoding="async" /></div>
             <div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="badge badge-teal">발제 5 · 재원</span>
@@ -1059,7 +1069,7 @@
         </div>
       </div>
 
-      <!-- Item 3: 발제 3 (임팩트스퀘어) -->
+      <!-- Item 3: 발제 3 (임팩트스퀘어 조용민) -->
       <div class="timeline-item" data-aos="fade-up" data-aos-delay="250">
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="glass-card p-6 ml-2">
@@ -1068,7 +1078,7 @@
               <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">14:30 ~ 14:50</span>
               <h3 class="text-lg font-bold text-white mt-1">[발제 3] 매출 연계 투자(RBF) 소개 및 립스를 활용한 프로젝트 투자</h3>
             </div>
-            <span class="badge badge-teal flex-shrink-0">임팩트스퀘어 류인선 · 조용민</span>
+            <span class="badge badge-teal flex-shrink-0">임팩트스퀘어 조용민</span>
           </div>
           <p class="text-sm mt-2" style="color:var(--text-muted);">20분 - 지분 대신 매출에서 회수하는 RBF 소개와 립스를 활용한 프로젝트 투자</p>
         </div>
@@ -1081,11 +1091,11 @@
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div>
               <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">14:50 ~ 15:10</span>
-              <h3 class="text-lg font-bold text-white mt-1">[발제 4] 한국사회가치연대기금이 바라보는 지역 금융: 승계형 M&amp;A 펀드와 풀뿌리 정책금융</h3>
+              <h3 class="text-lg font-bold text-white mt-1">[발제 4] 사회연대금융의 풀뿌리 정책금융 및 지역순환경제 제언</h3>
             </div>
             <span class="badge badge-teal flex-shrink-0">한국사회가치연대기금 전승범</span>
           </div>
-          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 - 지역 주체가 맡는 풀뿌리 정책금융과 지역 중소기업을 인수해 잇는 승계형 M&amp;A 펀드</p>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">20분 - 사회연대금융이 맡는 풀뿌리 정책금융과 지역순환경제를 위한 제언</p>
         </div>
       </div>
 
@@ -1113,9 +1123,9 @@
               <span class="text-xs font-bold tracking-wider" style="color:var(--teal);">15:30 ~ 16:30</span>
               <h3 class="text-lg font-bold text-white mt-1">[패널 토론 &amp; Q&amp;A] 하이퍼로컬 시대의 새로운 자본 운용 방식</h3>
             </div>
-            <span class="badge badge-active flex-shrink-0">발제자 전원</span>
+            <span class="badge badge-active flex-shrink-0">모더레이터 공성현 · 패널 4인</span>
           </div>
-          <p class="text-sm mt-2" style="color:var(--text-muted);">60분 (토론 45분 · Q&amp;A 15분) - 모더레이터 공성현 사무국장 · 지역 기업·생태계 특징, 투자·회수 전략, AC의 비즈니스 모델, 출자 구조·정책 제안을 둘러싼 토론</p>
+          <p class="text-sm mt-2" style="color:var(--text-muted); word-break: keep-all;">60분 (토론 45분 · Q&amp;A 15분) - 모더레이터 공성현 사무국장 · 패널 이순열(큐네스티), 류인선(임팩트스퀘어), 전승범(한국사회가치연대기금), 김희정(제주창조경제혁신센터) · 지역 기업·생태계 특징, 투자·회수 전략, AC의 비즈니스 모델, 출자 구조·정책 제안을 둘러싼 토론</p>
         </div>
       </div>
 
@@ -1135,7 +1145,13 @@
       <h2 id="panel-title" class="section-title text-white">패널 토론 주제</h2>
       <div class="teal-divider mx-auto mt-4"></div>
       <p class="mt-4 text-base" style="color:var(--text-muted);">하이퍼로컬 시대의 새로운 자본 운용 방식 · 4가지 핵심 의제</p>
-      <p class="mt-2 text-sm" style="color:var(--text-muted);">모더레이터 <span style="color:var(--teal);">공성현</span> 사무국장 · 패널 <span style="color:var(--teal);">발제자 전원</span></p>
+      <ul class="panel-people" aria-label="패널 토론 참여자">
+        <li class="panel-person panel-person-mod"><span class="pp-initial" aria-hidden="true">공</span><span><span class="pp-role">모더레이터</span><span class="pp-name">공성현 사무국장</span><span class="pp-org">KAIA</span></span></li>
+        <li class="panel-person"><img src="images/speaker-lee.webp" alt="" width="400" height="400" loading="lazy" decoding="async" /><span><span class="pp-role">패널</span><span class="pp-name">이순열 대표</span><span class="pp-org">큐네스티</span></span></li>
+        <li class="panel-person"><img src="images/speaker-ryu.webp" alt="" width="400" height="400" loading="lazy" decoding="async" /><span><span class="pp-role">패널</span><span class="pp-name">류인선 실장</span><span class="pp-org">임팩트스퀘어</span></span></li>
+        <li class="panel-person"><img src="images/speaker-jeon.webp" alt="" width="400" height="400" loading="lazy" decoding="async" /><span><span class="pp-role">패널</span><span class="pp-name">전승범 사업개발실장</span><span class="pp-org">한국사회가치연대기금</span></span></li>
+        <li class="panel-person"><img src="images/speaker-kim.webp" alt="" width="400" height="400" loading="lazy" decoding="async" /><span><span class="pp-role">패널</span><span class="pp-name">김희정 투자성장본부장</span><span class="pp-org">제주창조경제혁신센터</span></span></li>
+      </ul>
     </div>
 
     <div class="max-w-3xl mx-auto space-y-3" id="accordion">
