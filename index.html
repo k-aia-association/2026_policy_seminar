@@ -22,7 +22,7 @@
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <!-- Hero visual LCP -->
-  <link rel="preload" as="image" href="images/ring_back.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/ring_back.webp" fetchpriority="high" media="(min-width: 768px)" />
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -511,9 +511,9 @@
     @keyframes ringDrift {
       33% { transform: translate(-6px,-16px) rotate(-1.5deg); }
       66% { transform: translate(5px,-7px) rotate(1deg); } }
+    /* 모바일(<768px): 링이 혼자 떠 보여 숨김. 이미지도 <picture> 빈 소스로 내려받지 않음 */
     @media (max-width: 767px) {
-      .hero-visual { height: auto; margin-top: 0; }
-      .crystal-ring { width: min(80vw, 640px); height: auto; aspect-ratio: 1; }
+      .hero-visual { display: none; }
     }
     @media (prefers-reduced-motion: reduce) {
       .hero-visual * { animation: none !important; }
@@ -661,9 +661,9 @@
         <div class="crystal-ring" role="img" aria-label="크리스탈 링 비주얼">
           <div class="tilt">
             <div class="glow"></div>
-            <img class="layer back" src="images/ring_back.webp" alt="" width="1600" height="1600" loading="eager" fetchpriority="high" decoding="async" />
-            <img class="layer front" src="images/ring_front.webp" alt="" width="1600" height="1600" loading="eager" decoding="async" />
-            <img class="layer shards" src="images/ring_shards.webp" alt="" width="1600" height="1600" loading="eager" decoding="async" />
+            <picture><source media="(max-width: 767px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><img class="layer back" src="images/ring_back.webp" alt="" width="1600" height="1600" loading="eager" fetchpriority="high" decoding="async" /></picture>
+            <picture><source media="(max-width: 767px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><img class="layer front" src="images/ring_front.webp" alt="" width="1600" height="1600" loading="eager" decoding="async" /></picture>
+            <picture><source media="(max-width: 767px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><img class="layer shards" src="images/ring_shards.webp" alt="" width="1600" height="1600" loading="eager" decoding="async" /></picture>
           </div>
         </div>
       </div>
@@ -1500,8 +1500,9 @@
   (function () {
     const ring = document.querySelector('.crystal-ring');
     if (!ring) return;
+    if (!window.matchMedia('(min-width: 768px)').matches) return; // 모바일: 링 숨김(display:none), 아무것도 돌리지 않음
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return; // 모바일: 유휴 모션·글로우만
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return; // 터치 기기: 유휴 모션·글로우만
     let tx = 0, ty = 0, cx = 0, cy = 0;
     addEventListener('pointermove', e => {
       tx = (e.clientX / innerWidth) * 2 - 1;
